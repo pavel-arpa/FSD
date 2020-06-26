@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../node_modules/css-loader/dist/cjs.js!./styles/roboto.css":
+/*!******************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js!./styles/roboto.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ \"../node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../assets/fonts/Roboto-Regular.ttf */ \"./assets/fonts/Roboto-Regular.ttf\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\n// Module\nexports.push([module.i, \"@font-face {\\r\\n   font-family: 'Roboto';\\r\\n   src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \") format('truetype');\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./styles/roboto.css?../node_modules/css-loader/dist/cjs.js");
+
+/***/ }),
+
 /***/ "../node_modules/css-loader/dist/cjs.js!./styles/styles.css":
 /*!******************************************************************!*\
   !*** ../node_modules/css-loader/dist/cjs.js!./styles/styles.css ***!
@@ -93,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ \"../node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../assets/logo-chrome.png */ \"./assets/logo-chrome.png\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\n// Module\nexports.push([module.i, \".container {\\r\\n   padding-top: 2em;\\r\\n   min-width: 1000px;\\r\\n   margin: 0 auto;\\r\\n}\\r\\n\\r\\nh1 {\\r\\n   text-align: center;\\r\\n}\\r\\n\\r\\n.logo {\\r\\n   background-image: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\r\\n   background-size: cover;\\r\\n   height: 200px;\\r\\n   width: 200px;\\r\\n   margin: 0 auto;\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./styles/styles.css?../node_modules/css-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"../node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_AT_RULE_IMPORT_0___ = __webpack_require__(/*! -!../../node_modules/css-loader/dist/cjs.js!./roboto.css */ \"../node_modules/css-loader/dist/cjs.js!./styles/roboto.css\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ \"../node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../assets/logo-chrome.png */ \"./assets/logo-chrome.png\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nexports.i(___CSS_LOADER_AT_RULE_IMPORT_0___);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\n// Module\nexports.push([module.i, \"body {\\r\\n   font-family: 'Roboto', sans-serif;\\r\\n}\\r\\n\\r\\n.container {\\r\\n   padding-top: 2em;\\r\\n   min-width: 1000px;\\r\\n   margin: 0 auto;\\r\\n}\\r\\n\\r\\nh1 {\\r\\n   text-align: center;\\r\\n}\\r\\n\\r\\n.logo {\\r\\n   background-image: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \");\\r\\n   background-size: cover;\\r\\n   height: 200px;\\r\\n   width: 200px;\\r\\n   margin: 0 auto;\\r\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./styles/styles.css?../node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -141,7 +152,19 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Post; });\nclass Post {\r\n   constructor(title) {\r\n      this.title = title\r\n      this.date = new Date()\r\n      // this.img = img\r\n   }\r\n\r\n   toString() {\r\n      return JSON.stringify({\r\n         title: this.title,\r\n         date: this.date.toJSON()\r\n         // ,\r\n         // img: this.img\r\n      })\r\n   }\r\n\r\n   get uppercaseTitle() {\r\n      return this.title.toUpperCase()\r\n   }\r\n}\n\n//# sourceURL=webpack:///./Post.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Post; });\nclass Post {\r\n   constructor(title, img) {\r\n      this.title = title\r\n      this.date = new Date()\r\n      this.img = img\r\n   }\r\n\r\n   toString() {\r\n      return JSON.stringify({\r\n         title: this.title,\r\n         date: this.date.toJSON(),\r\n         img: this.img\r\n      })\r\n   }\r\n\r\n   get uppercaseTitle() {\r\n      return this.title.toUpperCase()\r\n   }\r\n}\n\n//# sourceURL=webpack:///./Post.js?");
+
+/***/ }),
+
+/***/ "./assets/fonts/Roboto-Regular.ttf":
+/*!*****************************************!*\
+  !*** ./assets/fonts/Roboto-Regular.ttf ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"03523cf578d69fa923226ff457b92d90.ttf\");\n\n//# sourceURL=webpack:///./assets/fonts/Roboto-Regular.ttf?");
 
 /***/ }),
 
@@ -165,7 +188,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n/* harmony import */ var _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo-chrome.png */ \"./assets/logo-chrome.png\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\nconst post = new _Post__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Webpack Post Title')\r\n\r\nconsole.log('Post to String:', post.toString())\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n/* harmony import */ var _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo-chrome.png */ \"./assets/logo-chrome.png\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\nconst post = new _Post__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Webpack Post Title', _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"])\r\n\r\nconsole.log('Post to String:', post.toString())\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
