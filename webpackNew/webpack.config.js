@@ -3,10 +3,29 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimazeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin')
 
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
+
+optimization = () => {
+   const config = {
+      splitChunks: {
+         chunks: 'all'
+      }
+   }
+    if (isProd) {
+       config.minimizer = [
+          new OptimazeCssAssetsWebpackPlugin(),
+          new TerserWebpackPlugin()
+       ]
+    }
+   return config
+}
+
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
 module.exports = {
    context: path.resolve(__dirname, 'src'),
@@ -16,7 +35,7 @@ module.exports = {
       analytics: './analytics.js'
    },
    output: {
-      filename: '[name].[contenthash].js',
+      filename: filename('js'),
       path: path.resolve(__dirname, 'dist')
    },
    resolve: {
@@ -26,11 +45,7 @@ module.exports = {
          '@': path.resolve(__dirname, 'src'),
       },
    },
-   optimization: {
-      splitChunks: {
-         chunks: 'all'
-      }
-   },
+   optimization: optimization(),
    devServer: {
       port: 4200,
       hot: isDev
@@ -52,7 +67,7 @@ module.exports = {
          ]
      }),
      new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].css'
+        filename: filename('css')
      })
    ],
    module: {
@@ -67,6 +82,19 @@ module.exports = {
                      reloadAll: true,
                   },
                }, 'css-loader']
+         },
+         {
+            test: /\.(sass|scss)$/,
+            use: [
+               {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                     hmr: isDev,
+                     reloadAll: true,
+                  },
+               }, 
+               'css-loader',
+               'sass-loader']
          },
          {
             test: /\.(png|jpg|svg|gif)$/,

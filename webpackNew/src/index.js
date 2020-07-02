@@ -3,6 +3,7 @@ import Post from '@models/Post'
 import xml from './assets/data.xml'
 import LogoChrome from './assets/logo-chrome.png'
 import './styles/styles.css'
+import './styles/scss.scss'
 
 const post = new Post('Webpack Post Title', LogoChrome)
 
