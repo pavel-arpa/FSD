@@ -27,11 +27,29 @@ optimization = () => {
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
+const cssLoaders = extra => {
+   const loaders = [
+      {
+         loader: MiniCssExtractPlugin.loader,
+         options: {
+            hmr: isDev,
+            reloadAll: true,
+         },
+      }, 
+      'css-loader'
+   ]
+
+   if (extra) {
+      loaders.push(extra)
+   }
+   return loaders
+}
+
 module.exports = {
    context: path.resolve(__dirname, 'src'),
    mode: 'development',
    entry: {
-      main: './index.js',
+      main: ['@babel/polyfill', './index.js'],
       analytics: './analytics.js'
    },
    output: {
@@ -74,27 +92,11 @@ module.exports = {
       rules: [
          {
             test: /\.css$/,
-            use: [
-               {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: {
-                     hmr: isDev,
-                     reloadAll: true,
-                  },
-               }, 'css-loader']
+            use: cssLoaders()
          },
          {
             test: /\.(sass|scss)$/,
-            use: [
-               {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: {
-                     hmr: isDev,
-                     reloadAll: true,
-                  },
-               }, 
-               'css-loader',
-               'sass-loader']
+            use: cssLoaders('sass-loader')
          },
          {
             test: /\.(png|jpg|svg|gif)$/,
@@ -107,6 +109,21 @@ module.exports = {
          {
             test: /\.xml$/,
             use: ['xml-loader']
+         },
+         { 
+            test: /\.js$/, 
+            exclude: /node_modules/, 
+            loader: {
+               loader: 'babel-loader',
+               options: {
+                  presets: [
+                     '@babel/preset-env'
+                  ],
+                  plugins: [
+                     '@babel/plugin-proposal-class-properties'
+                  ]
+               }
+            }
          }
       ]
    }

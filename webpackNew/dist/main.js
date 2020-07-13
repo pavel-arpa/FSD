@@ -148,7 +148,7 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./index.js","vendors~analytics~main"]);
+/******/ 	deferredModules.push([0,"vendors~analytics~main","vendors~main"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
@@ -186,7 +186,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _models_Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @models/Post */ \"./models/Post.js\");\n/* harmony import */ var _assets_data_xml__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/data.xml */ \"./assets/data.xml\");\n/* harmony import */ var _assets_data_xml__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_data_xml__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/logo-chrome.png */ \"./assets/logo-chrome.png\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/scss.scss */ \"./styles/scss.scss\");\n/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss_scss__WEBPACK_IMPORTED_MODULE_5__);\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst post = new _models_Post__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('Webpack Post Title', _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_3__[\"default\"])\r\n\r\njquery__WEBPACK_IMPORTED_MODULE_0__('pre').html(post.toString())\r\n\r\nconsole.log('Post to String:', post.toString())\r\n\r\nconsole.log('XML:', _assets_data_xml__WEBPACK_IMPORTED_MODULE_2___default.a)\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _models_Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @models/Post */ \"./models/Post.js\");\n/* harmony import */ var _assets_data_xml__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/data.xml */ \"./assets/data.xml\");\n/* harmony import */ var _assets_data_xml__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_data_xml__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/logo-chrome.png */ \"./assets/logo-chrome.png\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/scss.scss */ \"./styles/scss.scss\");\n/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_scss_scss__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\nvar post = new _models_Post__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('Webpack Post Title', _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\njquery__WEBPACK_IMPORTED_MODULE_0__('pre').html(post.toString());\nconsole.log('Post to String:', post.toString());\nconsole.log('XML:', _assets_data_xml__WEBPACK_IMPORTED_MODULE_2___default.a);\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -198,7 +198,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Post; });\nclass Post {\r\n   constructor(title, img) {\r\n      this.title = title\r\n      this.date = new Date()\r\n      this.img = img\r\n   }\r\n\r\n   toString() {\r\n      return JSON.stringify({\r\n         title: this.title,\r\n         date: this.date.toJSON(),\r\n         img: this.img\r\n      }, null, 2)\r\n   }\r\n\r\n   get uppercaseTitle() {\r\n      return this.title.toUpperCase()\r\n   }\r\n}\n\n//# sourceURL=webpack:///./models/Post.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Post; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Post = /*#__PURE__*/function () {\n  function Post(title, img) {\n    _classCallCheck(this, Post);\n\n    this.title = title;\n    this.date = new Date();\n    this.img = img;\n  }\n\n  _createClass(Post, [{\n    key: \"toString\",\n    value: function toString() {\n      return JSON.stringify({\n        title: this.title,\n        date: this.date.toJSON(),\n        img: this.img\n      }, null, 2);\n    }\n  }, {\n    key: \"uppercaseTitle\",\n    get: function get() {\n      return this.title.toUpperCase();\n    }\n  }]);\n\n  return Post;\n}();\n\n\n\n//# sourceURL=webpack:///./models/Post.js?");
 
 /***/ }),
 
@@ -221,6 +221,17 @@ eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./styles/styles.css?");
+
+/***/ }),
+
+/***/ 0:
+/*!****************************************!*\
+  !*** multi @babel/polyfill ./index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! @babel/polyfill */\"../node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! ./index.js */\"./index.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./index.js?");
 
 /***/ })
 
