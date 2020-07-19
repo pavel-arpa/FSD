@@ -2,20 +2,13 @@
 // БЛОК ОПИСАНИЯ КОНСТАНТ
 const path = require('path')
 const fs = require('fs')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimazeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 
-// Путь через dirname
-const PATHS = {
-   src: path.join(__dirname, './src'),
-   dist: path.join(__dirname, './dist'),
-   assets: 'assets/'
- }
 
 // Определение мода: разработка или продакшн
 const isDev = process.env.NODE_ENV === 'development'
@@ -38,9 +31,6 @@ optimization = () => {
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
-// Константы для PUG 
-const PAGES_DIR = `${PATHS.src}/pug/pages/`
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
 // Функция автодобавления кода для cssLoaders 
 const cssLoaders = extra => {
@@ -60,6 +50,25 @@ const cssLoaders = extra => {
    }
    return loaders
 }
+
+// Функция динамической обработки html файлов из папки pages (для шапки и футера два отделных файла и
+// в них должны быть прописаны все скрипты)
+function generateHtmlPlugins(templateDir) {
+   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+   return templateFiles.map(item => {
+     const parts = item.split('.');
+     const name = parts[0];
+     const extension = parts[1];
+     return new HtmlWebpackPlugin({
+       filename: `${name}.html`,
+       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+       inject: false, // Здесь нужно настроить загрузку JS
+     })
+   })
+ }
+ 
+ const htmlPlugins = generateHtmlPlugins('./src/pug/pages')
+
 
 // ---------------------------------- ++++ ----------------------------------
 
@@ -89,28 +98,6 @@ module.exports = {
       hot: isDev
    },
    plugins: [
-      // ...PAGES.map(page => new HtmlWebpackPlugin(
-      //    {
-      //       template: `${PAGES_DIR}/${page}`,
-      //       filename: `./${page.replace(/\.pug/,'.html')}`,
-      //       minify: {
-      //          collapseWhitespace: isProd
-      //       }
-      //    }
-      //  )),
-      // new HtmlWebpackPlugin({
-      //    // template: `${PAGES_DIR}/index.pug`,
-      //    template: './src/pug/pages/index.pug',
-      //    filename: './index.html',
-      //    inject: true
-      // }),
-      new HTMLWebpackPlugin({
-         template: './pug/pages/index.pug',
-         minify: {
-            collapseWhitespace: isProd
-         }
-      }),
-      new HtmlWebpackPugPlugin(),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
          patterns: [
@@ -123,12 +110,17 @@ module.exports = {
      new MiniCssExtractPlugin({
         filename: filename('css')
      })
-   ],
+   ].concat(htmlPlugins),
    module: {
       rules: [
          {
             test: /\.pug$/,
-            loader: 'pug-loader'
+            loader: 'pug-loader',
+            // include: path.resolve(__dirname, 'src/pug/icnludes'), ЗДЕСЬ НЕ ЗАБУДЬ СДЕЛАТЬ ДЛЯ ШАПКИ И ФУТЕРА
+            // use: ['raw-loader'],
+            options: {
+               pretty: isDev
+            }
          },
          {
             test: /\.css$/,
