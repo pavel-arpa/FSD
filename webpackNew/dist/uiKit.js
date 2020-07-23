@@ -57,7 +57,7 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"analytics": 0
+/******/ 		"uiKit": 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -148,22 +148,32 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./analytics.js","vendors~analytics~main"]);
+/******/ 	deferredModules.push([1,"vendors~main~uiKit"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./analytics.js":
-/*!**********************!*\
-  !*** ./analytics.js ***!
-  \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./uikit.js":
+/*!******************!*\
+  !*** ./uikit.js ***!
+  \******************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction createAnalytics() {\n  var counter = 0;\n  var destroyed = false;\n\n  var listener = function listener() {\n    return counter++;\n  };\n\n  jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', listener);\n  return {\n    destroy: function destroy() {\n      jquery__WEBPACK_IMPORTED_MODULE_0__(document).off('click', listener);\n      isDestroyed = true;\n    },\n    getClicks: function getClicks() {\n      if (destroyed) {\n        return \"Analytics is destroyed. Total clicks = \".concat(counter);\n      }\n\n      return counter;\n    }\n  };\n}\n\nwindow.analytics = createAnalytics();\n\n//# sourceURL=webpack:///./analytics.js?");
+eval("\n\n//# sourceURL=webpack:///./uikit.js?");
+
+/***/ }),
+
+/***/ 1:
+/*!****************************************!*\
+  !*** multi @babel/polyfill ./uikit.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! @babel/polyfill */\"../node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! ./uikit.js */\"./uikit.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./uikit.js?");
 
 /***/ })
 

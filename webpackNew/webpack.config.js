@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimazeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 
 // Определение мода: разработка или продакшн
@@ -51,25 +52,6 @@ const cssLoaders = extra => {
    return loaders
 }
 
-// Функция динамической обработки html файлов из папки pages (для шапки и футера два отделных файла и
-// в них должны быть прописаны все скрипты)
-function generateHtmlPlugins(templateDir) {
-   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-   return templateFiles.map(item => {
-     const parts = item.split('.');
-     const name = parts[0];
-     const extension = parts[1];
-     return new HtmlWebpackPlugin({
-       filename: `${name}.html`,
-       template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-       inject: false, // Здесь нужно настроить загрузку JS
-     })
-   })
- }
- 
- const htmlPlugins = generateHtmlPlugins('./src/pug/pages')
-
-
 // ---------------------------------- ++++ ----------------------------------
 
 
@@ -79,7 +61,7 @@ module.exports = {
    mode: 'development',
    entry: {
       main: ['@babel/polyfill', './index.js'],
-      analytics: './analytics.js'
+      uiKit: ['@babel/polyfill', './uikit.js']
    },
    output: {
       filename: filename('js'),
@@ -98,6 +80,16 @@ module.exports = {
       hot: isDev
    },
    plugins: [
+      new HtmlWebpackPlugin({
+         filename: 'index.html',
+         template: './pug/pages/index.pug',
+         ckunks: ['main']
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'uikit.html',
+         template: './pug/pages/uikit.pug',
+         chunks: ['uiKit']
+      }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
          patterns: [
@@ -106,18 +98,19 @@ module.exports = {
                  to: path.resolve(__dirname, "dist")
              },
          ]
-     }),
-     new MiniCssExtractPlugin({
-        filename: filename('css')
-     })
-   ].concat(htmlPlugins),
+      }),
+      new MiniCssExtractPlugin({
+         filename: filename('css')
+      }),
+      new LiveReloadPlugin({
+         appendScriptTag: true
+      })
+   ],
    module: {
       rules: [
          {
             test: /\.pug$/,
             loader: 'pug-loader',
-            // include: path.resolve(__dirname, 'src/pug/icnludes'), ЗДЕСЬ НЕ ЗАБУДЬ СДЕЛАТЬ ДЛЯ ШАПКИ И ФУТЕРА
-            // use: ['raw-loader'],
             options: {
                pretty: isDev
             }
@@ -137,10 +130,6 @@ module.exports = {
          {
             test: /\.(ttf|woff|woff2|eot)$/,
             use: ['file-loader']
-         },
-         {
-            test: /\.xml$/,
-            use: ['xml-loader']
          },
          { 
             test: /\.js$/, 

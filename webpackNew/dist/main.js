@@ -148,23 +148,12 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([0,"vendors~analytics~main","vendors~main"]);
+/******/ 	deferredModules.push([0,"vendors~main~uiKit","vendors~main"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./assets/data.xml":
-/*!*************************!*\
-  !*** ./assets/data.xml ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = {\"email\":{\"to\":[\"Pavel\"]}}\n\n//# sourceURL=webpack:///./assets/data.xml?");
-
-/***/ }),
 
 /***/ "./assets/logo-chrome.png":
 /*!********************************!*\
@@ -186,29 +175,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_data_xml__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/data.xml */ \"./assets/data.xml\");\n/* harmony import */ var _assets_data_xml__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_assets_data_xml__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/logo-chrome.png */ \"./assets/logo-chrome.png\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles/styles.css */ \"./styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/scss.scss */ \"./styles/scss.scss\");\n/* harmony import */ var _styles_scss_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_scss_scss__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\nvar post = new Post('Webpack Post Title', _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\njquery__WEBPACK_IMPORTED_MODULE_0__('pre').html(post.toString());\nconsole.log('Post to String:', post.toString());\nconsole.log('XML:', _assets_data_xml__WEBPACK_IMPORTED_MODULE_1___default.a);\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _assets_logo_chrome_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/logo-chrome.png */ \"./assets/logo-chrome.png\");\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/styles.scss */ \"./styles/styles.scss\");\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
-/***/ "./styles/scss.scss":
-/*!**************************!*\
-  !*** ./styles/scss.scss ***!
-  \**************************/
+/***/ "./styles/styles.scss":
+/*!****************************!*\
+  !*** ./styles/styles.scss ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./styles/scss.scss?");
-
-/***/ }),
-
-/***/ "./styles/styles.css":
-/*!***************************!*\
-  !*** ./styles/styles.css ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./styles/styles.css?");
+eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./styles/styles.scss?");
 
 /***/ }),
 
