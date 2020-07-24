@@ -1,4 +1,8 @@
 import * as $ from 'jquery'
 import LogoChrome from './assets/logo-chrome.png'
-import './styles/styles.scss'
 
+function importJsCss(resolve) {
+   resolve.keys().forEach(resolve);
+}
+
+importJsCss(require.context('../src/', true, /\.js$|\.scss$/));

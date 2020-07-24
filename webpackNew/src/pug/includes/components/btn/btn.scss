@@ -1,0 +1,23 @@
+.btn{
+   display: flex;
+   border-radius: 22px;
+   text-transform: uppercase;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 12px;
+   line-height: 15px;
+}
+.btn_gradient{
+   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+   color: #fff;
+   padding: 14px 20px 15px 20px;
+}
+
+// .btn__text_bordered{
+//    margin: 2px 2px 2px 2px;
+//    padding: 12px 18px 13px 18px;
+//    text-align: center;
+// }
+.btn__text_bordered{
+   
+}

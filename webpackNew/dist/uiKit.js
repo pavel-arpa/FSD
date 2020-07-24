@@ -148,25 +148,14 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([1,"vendors~main~uiKit"]);
+/******/ 	deferredModules.push([1,"vendors~main~uiKit","main~uiKit"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ "./uikit.js":
-/*!******************!*\
-  !*** ./uikit.js ***!
-  \******************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("\n\n//# sourceURL=webpack:///./uikit.js?");
-
-/***/ }),
-
-/***/ 1:
+/******/ ([
+/* 0 */,
+/* 1 */
 /*!****************************************!*\
   !*** multi @babel/polyfill ./uikit.js ***!
   \****************************************/
@@ -176,5 +165,4 @@ eval("\n\n//# sourceURL=webpack:///./uikit.js?");
 eval("__webpack_require__(/*! @babel/polyfill */\"../node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! ./uikit.js */\"./uikit.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./uikit.js?");
 
 /***/ })
-
-/******/ });
+/******/ ]);

@@ -86,8 +86,13 @@ module.exports = {
          ckunks: ['main']
       }),
       new HtmlWebpackPlugin({
-         filename: 'uikit.html',
-         template: './pug/pages/uikit.pug',
+         filename: 'uikit1.html',
+         template: './pug/pages/uikit/uikit1.pug',
+         chunks: ['uiKit']
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'uikit2.html',
+         template: './pug/pages/uikit/uikit2.pug',
          chunks: ['uiKit']
       }),
       new CleanWebpackPlugin(),

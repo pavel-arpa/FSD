@@ -1,9 +1,13 @@
+// mixins
+include ../../includes/components/btn/btn.pug
+
+
 doctype html
 html(lang="ru")
    head
       meta(charset="UTF-8")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
-      link(rel="icon", href="favicon.ico", type="image/ico")
-      title Toxin
+      title UI Kit
    body
-      
+      +btn("Click me")
+      +btn("Click me", "bordered")
