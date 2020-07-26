@@ -1,6 +1,8 @@
-mixin color-label(code_color, text)
+mixin color-label(color, text, code_color)
+   - var square = `color-label__square_${color}`
    .color-label
       .color-label__square
+         div(class= square)
       .color-label__text-wrapper
          span.color-label__title= text
          span.color-label__subtitle= code_color

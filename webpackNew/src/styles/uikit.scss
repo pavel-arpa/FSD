@@ -1,0 +1,10 @@
+// Шрифты / fonts
+@import "open-sans.css";
+@import "montserrat.css";
+
+// Переменные
+@import "../pug/includes/components/colors-variables.scss";
+
+// Импорты стилей компонентов
+@import "../pug/includes/components/colors/colors.scss";
+@import "../pug/includes/components/colors/color-label/color-label.scss";

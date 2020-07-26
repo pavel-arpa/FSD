@@ -2,3 +2,74 @@
    display: flex;
    flex-direction: row;
 }
+.color-label__text-wrapper{
+   display: flex;
+   flex-direction: column;
+   font-size: 19px;
+   line-height: 29px;
+   align-items: left;
+   padding-top: 6px;
+   padding-bottom: 6px;
+   padding-left: 40px;
+}
+.color-label__title{
+   color: $dh100;
+   font-family: "Open Sans";
+   font-weight: bold;
+}
+.color-label__subtitle{
+   color: $dh100;
+   font-family: "Open Sans";
+   font-weight: regular;
+}
+.color-label__square{
+   &_dh100 {
+   background: $dh100;
+   border-radius: 6px;
+   display: flex;
+   width: 70px;
+   height: 70px;
+   }
+   &_dh75 {
+   background: $dh75;
+   border-radius: 6px;
+   display: flex;
+   width: 70px;
+   height: 70px;
+   }
+   &_dh50 {
+   background: $dh50;
+   border-radius: 6px;
+   display: flex;
+   width: 70px;
+   height: 70px;
+   }
+   &_dh25 {
+      background: $dh25;
+      border-radius: 6px;
+      display: flex;
+      width: 70px;
+      height: 70px;
+   }
+   &_dh5 {
+      background: $dh5;
+      border-radius: 6px;
+      display: flex;
+      width: 70px;
+      height: 70px;
+   }
+   &_purple {
+      background: $purple;
+      border-radius: 6px;
+      display: flex;
+      width: 70px;
+      height: 70px;
+   }
+   &_green {
+      background: $green;
+      border-radius: 6px;
+      display: flex;
+      width: 70px;
+      height: 70px;
+   }
+}
