@@ -3,8 +3,9 @@
 @import "montserrat.css";
 
 // Переменные
-@import "../pug/includes/components/colors-variables.scss";
+@import "../pug/includes/components/global/colors-variables.scss";
 
 // Импорты стилей компонентов
-@import "../pug/includes/components/colors/colors.scss";
-@import "../pug/includes/components/colors/color-label/color-label.scss";
+@import "../pug/includes/components/uikit1-wrapper/uikit1-wrapper.scss";
+
+

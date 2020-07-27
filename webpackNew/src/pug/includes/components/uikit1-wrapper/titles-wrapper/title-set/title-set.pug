@@ -1,0 +1,8 @@
+mixin title-set(tag, title)
+   - var tag_mod = `title-set__tag_${tag.toLowerCase()}`
+   - var title_mod = `title-set__title_${tag.toLowerCase()}`
+   .title-set
+      .title-set__tag
+         span(class=tag_mod)= tag
+      .title-set__title
+         span(class=title_mod)= title
