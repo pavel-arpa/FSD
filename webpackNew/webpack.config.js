@@ -61,7 +61,8 @@ module.exports = {
    mode: 'development',
    entry: {
       main: ['@babel/polyfill', './index.js'],
-      uiKit: ['@babel/polyfill', './uikit.js']
+      colorsAndType: ['@babel/polyfill', './colors-and-type.js'],
+      formElements: ['@babel/polyfill', './form-elements.js']
    },
    output: {
       filename: filename('js'),
@@ -86,14 +87,14 @@ module.exports = {
          ckunks: ['main']
       }),
       new HtmlWebpackPlugin({
-         filename: 'uikit1.html',
-         template: './pug/pages/uikit/uikit1.pug',
-         chunks: ['uiKit']
+         filename: 'colors-and-type.html',
+         template: './pug/pages/uikit/colors-and-type.pug',
+         chunks: ['colorsAndType']
       }),
       new HtmlWebpackPlugin({
-         filename: 'uikit2.html',
-         template: './pug/pages/uikit/uikit2.pug',
-         chunks: ['uiKit']
+         filename: 'form-elements.html',
+         template: './pug/pages/uikit/form-elements.pug',
+         chunks: ['formElements']
       }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({

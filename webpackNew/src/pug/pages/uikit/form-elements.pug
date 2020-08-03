@@ -1,7 +1,3 @@
-// mixins
-include ../../includes/components/btn/btn.pug
-
-
 doctype html
 html(lang="ru")
    head
@@ -9,5 +5,5 @@ html(lang="ru")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
       title UI Kit
    body
-      +btn("Click me")
-      +btn("Click me", "bordered")
+      include ./form-elements-wrapper/form-elements-wrapper.pug
+

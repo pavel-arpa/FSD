@@ -1,0 +1,10 @@
+mixin text-field(title, text, _sub)
+   - var id_label = Math.floor(Math.random() * 10000000)
+   .text-field
+      if title
+         .text-field__wrapper
+            label(for=id_label class="text-field__label")= title
+            if _sub
+               label(for=id_label class="text-field__label_extra")= _sub
+         br
+      input(type="text" id=id_label, placeholder=text class="text-field__input")

@@ -1,0 +1,18 @@
+// Шрифты / fonts
+@import "./open-sans.css";
+@import "./montserrat.css";
+
+// Переменные
+@import "../pug/includes/components/global/colors-variables.scss";
+
+// Логотипы
+@import "../pug/includes/components/global/logo/logo.scss";
+
+// Импорты стилей компонентов
+@import "../pug/pages/uikit/colors-and-type-wrapper/colors-and-type-wrapper.scss";
+@import "../pug/pages/uikit/colors-and-type-wrapper/colors/colors.scss";
+@import "../pug/includes/components/color-label/color-label.scss";
+@import "../pug/includes/components/title-set/title-set.scss";
+@import "../pug/pages/uikit/colors-and-type-wrapper/colors-titles-wrapper/colors-titles-wrapper.scss";
+
+

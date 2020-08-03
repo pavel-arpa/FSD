@@ -1,0 +1,38 @@
+.text-field {
+   display: flex;
+   flex-direction: column;
+}
+.text-field__label {
+   font-family: "Montserrat";
+   font-size: 12px;
+   line-height: 15px;
+   font-weight: bold;
+   text-transform: uppercase;
+}
+.text-field__label_extra {
+   font-family: "Montserrat";
+   font-size: 12px;
+   line-height: 15px;
+   text-transform: uppercase;
+   color: $dh50;
+}
+.text-field__input {
+   font-family: "Montserrat";
+   font-size: 14px;
+   line-height: 18px;
+   text-transform: capitalize;
+   color: $dh25;
+   background: #FFFFFF;
+   border: 1px solid rgba(31, 32, 65, 0.25);
+   box-sizing: border-box;
+   border-radius: 4px;
+   padding: 13px 15px;
+   height: 44px;
+   width: 320px;
+}        
+.text-field__wrapper {
+   display: flex;
+   justify-content: space-between;
+   width: 320px;
+   padding-top: 20px;
+}
