@@ -1,8 +1,14 @@
-mixin color-label(color, text, code_color)
-   - var square = `color-label__square_${color}`
+//- {
+//-    color:
+//-    text:
+//-    code_color:
+//- }
+
+mixin color-label(arg)
+   - var square = `color-label__square_${arg.color}`
    .color-label
       .color-label__square
          div(class= square)
       .color-label__text-wrapper
-         span.color-label__title= text
-         span.color-label__subtitle= code_color
+         span.color-label__title= arg.text
+         span.color-label__subtitle= arg.code_color

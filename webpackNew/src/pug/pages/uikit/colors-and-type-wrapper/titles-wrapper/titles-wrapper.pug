@@ -1,7 +1,7 @@
 include ../../../../includes/components/title-set/title-set.pug
 
 .titles-wrapper
-   +title-set("H1", "This one is the sub-section or widget title")
-   +title-set("H2", "Next one is the item title inside widgets")
-   +title-set("H3", "This is a label or CTA text")
-   +title-set("Body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")
+   +title-set({tag: "H1", title: "This one is the sub-section or widget title"})
+   +title-set({tag: "H2", title: "Next one is the item title inside widgets"})
+   +title-set({tag: "H3", title: "This is a label or CTA text"})
+   +title-set({tag: "Body", title: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
