@@ -1,0 +1,6 @@
+include ../../../../includes/components/global/logo/logo.pug
+
+.form-elements-wrapper
+   include ../../../../includes/components/text-field/text-field.pug
+   +text-field({title: "text field", text: "Email", status: "default"})
+   +text-field({title: "text field", text: "This is pretty awesome", status: "hover / focus", mod: "focused"})
