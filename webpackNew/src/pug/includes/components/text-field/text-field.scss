@@ -44,3 +44,6 @@
 .text-field__input_focused:focus::placeholder {
    color: $dh75;
 }
+.text-field__input_focused:focus {
+   border: 1px solid rgba(31, 32, 65, 0.5);
+}

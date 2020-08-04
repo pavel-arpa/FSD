@@ -9,6 +9,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimazeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const webpack = require('webpack');
 
 
 // Определение мода: разработка или продакшн
@@ -110,7 +111,11 @@ module.exports = {
       }),
       new LiveReloadPlugin({
          appendScriptTag: true
-      })
+      }),
+      new webpack.ProvidePlugin({
+         $: "jquery",
+         jQuery: "jquery"
+     }),
    ],
    module: {
       rules: [

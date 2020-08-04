@@ -23,53 +23,29 @@
    font-weight: regular;
 }
 .color-label__square{
-   &_dh100 {
-   background: $dh100;
    border-radius: 6px;
    display: flex;
    width: 70px;
    height: 70px;
+   &_dh100 {
+      background: $dh100;
    }
    &_dh75 {
-   background: $dh75;
-   border-radius: 6px;
-   display: flex;
-   width: 70px;
-   height: 70px;
+      background: $dh75;
    }
    &_dh50 {
-   background: $dh50;
-   border-radius: 6px;
-   display: flex;
-   width: 70px;
-   height: 70px;
+      background: $dh50;
    }
    &_dh25 {
       background: $dh25;
-      border-radius: 6px;
-      display: flex;
-      width: 70px;
-      height: 70px;
    }
    &_dh5 {
       background: $dh5;
-      border-radius: 6px;
-      display: flex;
-      width: 70px;
-      height: 70px;
    }
    &_purple {
       background: $purple;
-      border-radius: 6px;
-      display: flex;
-      width: 70px;
-      height: 70px;
    }
    &_green {
       background: $green;
-      border-radius: 6px;
-      display: flex;
-      width: 70px;
-      height: 70px;
    }
 }

@@ -4,3 +4,4 @@ include ../../../../includes/components/global/logo/logo.pug
    include ../../../../includes/components/text-field/text-field.pug
    +text-field({title: "text field", text: "Email", status: "default"})
    +text-field({title: "text field", text: "This is pretty awesome", status: "hover / focus", mod: "focused"})
+   +text-field({title: "masked text field", text: "ДД.ММ.ГГГГ", status: "default", mod: "focused", mask: true})

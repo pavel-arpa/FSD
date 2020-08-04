@@ -8,7 +8,7 @@ mixin color-label(arg)
    - var square = `color-label__square_${arg.color}`
    .color-label
       .color-label__square
-         div(class= square)
+         div(class= `color-label__square ${square}`)
       .color-label__text-wrapper
          span.color-label__title= arg.text
          span.color-label__subtitle= arg.code_color

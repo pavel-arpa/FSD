@@ -48,6 +48,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
     "jquery": "^3.5.1",
+    "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^8.0.1",
     "pug-cli": "^1.0.0-alpha6",
     "webpack-livereload-plugin": "^2.3.0"

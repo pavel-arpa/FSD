@@ -3,10 +3,14 @@
 //-    text:
 //-    status:
 //-    mod:
+//-    mask:
 //- }
 
 mixin text-field(arg)
-   - var id_label = Math.floor(Math.random() * 10000000)
+   if arg.mask
+      - var id_label = "date"
+   else
+      - var id_label = Math.floor(Math.random() * 10000000)
    .text-field
       if arg.title
          .text-field__label-wrapper
