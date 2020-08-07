@@ -1,9 +1,5 @@
-// Шрифты / fonts
-@import "./open-sans.css";
-@import "./montserrat.css";
-
-// Переменные
-@import "../pug/includes/components/global/colors-variables.scss";
+// Общие стили
+@import "./common.scss";
 
 // Логотипы
 @import "../pug/includes/components/global/logo/logo.scss";

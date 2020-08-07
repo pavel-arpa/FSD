@@ -29,28 +29,15 @@
    display: flex;
    width: 336px;
    &_h1 {
-      font-family: "Open Sans";
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 30px;
+      @extend %font-h1;
    }
    &_h2 {
-      font-family: "Open Sans";
-      font-weight: bold;
-      font-size: 19px;
-      line-height: 24px;
+      @extend %font-h2;
    }
    &_h3 {
-      font-family: "Montserrat";
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 12px;
-      line-height: 15px;
+      @extend %font-h3;
    }
    &_body {
-      font-family: "Montserrat";
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 24px;
+      @extend %font-body;
    }
 }

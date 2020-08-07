@@ -1,3 +1,13 @@
 @import "~normalize.css";
-@import "roboto.css";
 @import "null.scss";
+
+// Шрифты
+@import "./montserrat.css";
+@import "./open-sans.css";
+
+// ПЕРЕМЕННЫЕ
+// Цвета
+@import "../pug/includes/components/global/colors-variables.scss";
+
+// Шрифты
+@import "../pug/includes/components/global/fonts-extendes.scss";

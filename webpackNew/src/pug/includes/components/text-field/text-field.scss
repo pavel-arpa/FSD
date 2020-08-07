@@ -3,18 +3,12 @@
    flex-direction: column;
 }
 .text-field__label {
-   font-family: "Montserrat";
-   font-size: 12px;
-   line-height: 15px;
-   font-weight: bold;
-   text-transform: uppercase;
+   @extend %font-h3;
 }
 .text-field__label_extra {
-   font-family: "Montserrat";
-   font-size: 12px;
-   line-height: 15px;
-   text-transform: uppercase;
+   @extend %font-h3;
    color: $dh50;
+   font-weight: normal;
 }
 .text-field__label-wrapper {
    display: flex;
@@ -28,7 +22,7 @@
    line-height: 18px;
    color: $dh75;
    background: #FFFFFF;
-   border: 1px solid rgba(31, 32, 65, 0.25);
+   border: 1px solid $dh25;
    box-sizing: border-box;
    border-radius: 4px;
    padding: 13px 15px;
@@ -45,5 +39,5 @@
    color: $dh75;
 }
 .text-field__input_focused:focus {
-   border: 1px solid rgba(31, 32, 65, 0.5);
+   border: 1px solid $dh50;
 }

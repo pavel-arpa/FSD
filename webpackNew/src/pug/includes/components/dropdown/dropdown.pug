@@ -1,0 +1,47 @@
+//- {
+//-    text:
+//-    status:
+//-    title:
+//-    type:
+//- }
+
+mixin dropdown(arg)
+   - var id_label = Math.floor(Math.random() * 10000000)
+   .dropdown
+      .dropdown__label-wrapper
+         p.dropdown__label= arg.title
+         if arg.status
+            p.dropdown__label_extra= arg.status
+      if arg.type = "people"
+         button.dropdown__btn
+            span.dropdown__btn-title= "Сколько гостей"
+            <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="dropdown__path" d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill-opacity="0.75"/>
+            </svg>
+         ul.dropdown__content
+            li.dropdown__item
+               span.dropdown__item-title= "Взрослые"
+               .dropdown__item-wrapper
+                  span.dropdown__circle.dropdown__circle_unavailable= "-"
+                  span.dropdown__number-of-people= "0"
+                  span.dropdown__circle= "+"
+            li.dropdown__item
+               span.dropdown__item-title= "Дети"
+               .dropdown__item-wrapper
+                  span.dropdown__circle.dropdown__circle_unavailable= "-"
+                  span.dropdown__number-of-people= "0"
+                  span.dropdown__circle= "+"
+            li.dropdown__item
+               span.dropdown__item-title= "Младенцы"
+               .dropdown__item-wrapper
+                  span.dropdown__circle.dropdown__circle_unavailable= "-"
+                  span.dropdown__number-of-people= "0"
+                  span.dropdown__circle= "+"
+            li.dropdown__btn-settings
+               button.dropdown__btn-clear= "очистить"
+               button.dropdown__btn-submit= "применить"
+      //- if arg.type = "accommodation"
+      //-    .
+
+      
+      

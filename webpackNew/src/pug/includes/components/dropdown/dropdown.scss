@@ -1,0 +1,191 @@
+.dropdown {
+   display: inline-block;
+   position: relative;
+}
+
+// Заголовки
+.dropdown__label {
+   @extend %font-h3
+}
+.dropdown__label_extra {
+   font-family: "Montserrat";
+   font-size: 12px;
+   line-height: 15px;
+   text-transform: uppercase;
+   color: $dh50;
+}
+.dropdown__label-wrapper {
+   display: flex;
+   justify-content: space-between;
+   width: 320px;
+   padding-bottom: 5px;
+}
+
+// Кнопка
+.dropdown__btn {
+   display: flex;
+   justify-content: space-between;
+   background-color: #fff;
+   border: 1px solid $dh25;
+   border-radius: 4px;
+   font-family: "Montserrat";
+   font-size: 14px;
+   line-height: 14px;
+   color: $dh75;
+   box-sizing: border-box;
+   padding: 13px 15px;
+   height: 44px;
+   width: 320px;
+   text-align: left;
+}
+.dropdown__btn_clicked {
+   border: 1px solid $dh50;
+   border-radius: 4px 4px 0px 0px;
+}
+.dropdown__btn_default {
+   border: 1px solid $dh25;
+}
+
+
+// Стрелка кнопки
+.dropdown__arrow {
+   margin-top: 4px;
+}
+.dropdown__path {
+   fill: $dh50 !important;
+}
+.dropdown__btn.dropdown__btn_clicked>.dropdown__arrow>.dropdown__path {
+   fill: $dh75 !important;
+}
+.dropdown__btn.dropdown__btn_clicked>.dropdown__arrow{
+   transition: transform .3s;
+   transform: rotate(180deg);
+}
+.dropdown__btn.dropdown__btn_default>.dropdown__arrow{
+   transition: transform .3s;
+   transform: rotate(0deg);
+}
+
+// Меню dropdown
+.dropdown__content {
+   display: none;
+   position: absolute;
+   z-index: 1;
+   width: 320px;
+   height: 159px;
+   background-color: #fff;
+   border: 1px solid $dh50;
+   border-top: 0px;
+   border-radius: 0px 0px 4px 4px;
+   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.dropdown__btn.dropdown__btn_clicked+ .dropdown__content {
+   display: block;
+}
+.dropdown__btn.dropdown__btn_default+ .dropdown__content {
+   display: none;
+}
+
+// Элементы меню dropdown
+.dropdown__item {
+   padding: 7px 7px 0px 15px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.dropdown__item-title {
+   @extend %font-h3;
+   line-height: 30px;
+}
+.dropdown__item-wrapper {
+   display: flex;
+   flex-direction: row;
+}
+.dropdown__circle {
+   border-radius: 22px;
+   border: 1px solid $dh25;
+   font-family: "Montserrat";
+   color: $dh50;
+   text-align: center;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 18px;
+   line-height: 27px;
+   display: flex;
+   justify-content: center;
+   height: 30px;
+   width: 30px;
+   cursor: pointer;
+   user-select: none;
+   &_unavailable {
+   color: $dh25;
+   border: 1px solid $dh5;
+   cursor: default;
+   }
+}
+.dropdown__number-of-people {
+   @extend %font-h3;
+   display: flex;
+   justify-content: center;
+   line-height: 30px;
+   width: 30px;
+}
+
+// Кнопки настроки меню dropdown
+.dropdown__btn-settings {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   padding: 19px 7px 13px 15px;
+}
+.dropdown__btn-clear {
+   @extend %font-h3;
+   background-color: #fff;
+   color: $dh50;
+   display: none;
+   &_visible {
+      display: block;
+   }
+}
+.dropdown__btn-submit {
+   @extend %font-h3;
+   background-color: #fff;
+   color: $purple;
+   margin: 0 0 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
