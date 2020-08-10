@@ -101,9 +101,13 @@ module.exports = {
       new CopyWebpackPlugin({
          patterns: [
              {
-                 from: path.resolve(__dirname, "src/favicon.ico"),
-                 to: path.resolve(__dirname, "dist")
+                 from: path.resolve(__dirname, 'src/favicon.ico'),
+                 to: path.resolve(__dirname, 'dist')
              },
+            //  {
+            //     from: path.resolve(__dirname, './src/pug/includes/components/expandable-checkbox-list/expandable-checkbox-list.svg'),
+            //     to: path.resolve(__dirname, 'dist/img')
+            //  }
          ]
       }),
       new MiniCssExtractPlugin({
@@ -132,7 +136,25 @@ module.exports = {
          },
          {
             test: /\.(sass|scss)$/,
-            use: cssLoaders('sass-loader')
+            use: [
+               {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                     hmr: isDev,
+                     reloadAll: true,
+                  },
+               }, 
+               {
+                  loader: 'css-loader'
+               }, 
+               {
+                  loader: 'resolve-url-loader',
+               },
+               {
+                  loader: 'sass-loader'
+               }
+               
+            ]
          },
          {
             test: /\.(png|jpg|svg|gif)$/,

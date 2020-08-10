@@ -1,6 +1,7 @@
 //- include ../../../../includes/components/global/logo/logo.pug
 include ../../../../includes/components/dropdown/dropdown.pug
 include ../../../../includes/components/text-field/text-field.pug
+include ../../../../includes/components/expandable-checkbox-list/expandable-checkbox-list.pug
 
 .form-elements-wrapper
    .form-elements-wrapper__inputs-wrapper
@@ -8,3 +9,4 @@ include ../../../../includes/components/text-field/text-field.pug
       +text-field({title: "text field", text: "This is pretty awesome", status: "hover / focus", mod: "focused"})
       +dropdown({title: "dropdown", text: "Сколько гостей", status: "default", type: "people"})
       +text-field({title: "masked text field", text: "ДД.ММ.ГГГГ", status: "default", mod: "focused", mask: true})
+      +expandable-checkbox-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], checked: [2, 3, 4]})
