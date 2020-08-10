@@ -26,12 +26,15 @@
    }
    &:checked+.expandable-checkbox-list__rectangle {
       border: 1px solid $purple;
-      background-image: url(../pug/includes/components/expandable-checkbox-list/expandable-checkbox-list.svg);
+      background-image: url(expandable-checkbox-list.svg);
    }
 }
 
 .expandable-checkbox-list__rectangle:active {
    background-color: #aaa;
 }
-
+.tr {
+   background-image: url(expandable-checkbox-list.svg);
+   width: 500px;
+}
 
