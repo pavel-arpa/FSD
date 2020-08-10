@@ -26,7 +26,7 @@
    }
    &:checked+.expandable-checkbox-list__rectangle {
       border: 1px solid $purple;
-      background-image: url(./expandable-checkbox-list.png);
+      background-image: url(../pug/includes/components/expandable-checkbox-list/expandable-checkbox-list.svg);
    }
 }
 

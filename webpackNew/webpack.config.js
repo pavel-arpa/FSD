@@ -130,10 +130,10 @@ module.exports = {
                pretty: isDev
             }
          },
-         {
-            test: /\.css$/,
-            use: cssLoaders()
-         },
+         // {
+         //    test: /\.css$/,
+         //    use: cssLoaders()
+         // },
          {
             test: /\.(sass|scss)$/,
             use: [
@@ -151,7 +151,10 @@ module.exports = {
                   loader: 'resolve-url-loader',
                },
                {
-                  loader: 'sass-loader'
+                  loader: 'sass-loader',
+                  options: {
+                     sourceMap: true
+                   }
                }
                
             ]
