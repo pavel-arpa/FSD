@@ -2,28 +2,37 @@
 //-    title:
 //-    items: ["item1", "item2"...]
 //-    checked: [1, 2, 3...]
+//-    expanded: true
 //- }
 
 mixin expandable-checkbox-list(arg)
    - var arrayChecked = arg.checked
    .expandable-checkbox-list
-      button.expandable-checkbox-list__btn
-         span.expandable-checkbox-list__title= arg.title
-         <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <path d="M10.5938 0.57812L12 1.98437L6 7.98437L3.49418e-06 1.98437L1.40625 0.578122L6 5.17187L10.5938 0.57812Z" fill="#1F2041" fill-opacity="0.5"/>
-         </svg>
+      - if (arg.expanded == true) {
+         button.expandable-checkbox-list__btn.expandable-checkbox-list__btn_clicked
+            span.expandable-checkbox-list__title= arg.title
+            <svg class="expandable-checkbox-list__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5938 0.57812L12 1.98437L6 7.98437L3.49418e-06 1.98437L1.40625 0.578122L6 5.17187L10.5938 0.57812Z" fill="#1F2041" fill-opacity="0.5"/>
+            </svg>
+      - } else {
+         button.expandable-checkbox-list__btn.expandable-checkbox-list__btn_default
+            span.expandable-checkbox-list__title= arg.title
+            <svg class="expandable-checkbox-list__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.5938 0.57812L12 1.98437L6 7.98437L3.49418e-06 1.98437L1.40625 0.578122L6 5.17187L10.5938 0.57812Z" fill="#1F2041" fill-opacity="0.5"/>
+            </svg>
+      - }
       .expandable-checkbox-list__items
          - for (let i=0; i<arg["items"].length; i++) {
             - if (arrayChecked.indexOf(i+1) != -1) {
                .expandable-checkbox-list__checkbox-wrapper
-                  input(class="expandable-checkbox-list__checkbox" name= arg.items[i] type="checkbox" id= arg.items[i] checked)
-                  div(class="expandable-checkbox-list__rectangle" for= arg.items[i])
-                  label(class="expandable-checkbox-list__checkbox-label" for= arg.items[i])= arg.items[i]
+                  label(class="expandable-checkbox-list__checkbox-label")= arg.items[i]
+                     input(class="expandable-checkbox-list__checkbox" name= arg.items[i] type="checkbox" checked="checked")
+                     span.expandable-checkbox-list__checkmark
             - } else {
                .expandable-checkbox-list__checkbox-wrapper
-                  input(class="expandable-checkbox-list__checkbox" name=arg.items[i] type="checkbox" id= arg.items[i])
-                  div(class="expandable-checkbox-list__rectangle" for= arg.items[i])
-                  label(class="expandable-checkbox-list__checkbox-label" for= arg.items[i])= arg.items[i]
+                  label(class="expandable-checkbox-list__checkbox-label")= arg.items[i]
+                     input(class="expandable-checkbox-list__checkbox" name= arg.items[i] type="checkbox")
+                     span.expandable-checkbox-list__checkmark
             - }
          - }
       .tr
