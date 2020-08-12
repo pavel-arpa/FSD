@@ -18,7 +18,7 @@
    display: flex;
    justify-content: space-between;
    width: 320px;
-   padding-bottom: 5px;
+   margin-bottom: 5px;
 }
 
 // Кнопка
@@ -35,16 +35,30 @@
    box-sizing: border-box;
    padding: 13px 15px;
    height: 44px;
-   width: 320px;
    text-align: left;
-}
-.dropdown__btn_clicked {
+   &_big {
+      width: 320px;
+   }
+   &_small {
+      width: 266px;
+   }
+   &_clicked {
    border: 1px solid $dh50;
    border-radius: 4px 4px 0px 0px;
-}
-.dropdown__btn_default {
+   }
+   &_default {
    border: 1px solid $dh25;
+   }
 }
+
+// Заголовок
+.dropdown__btn-title {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 190px;
+   white-space: pre;
+}
+
 
 
 // Стрелка кнопки
@@ -71,13 +85,18 @@
    display: none;
    position: absolute;
    z-index: 1;
-   width: 320px;
-   height: 159px;
    background-color: #fff;
    border: 1px solid $dh50;
    border-top: 0px;
    border-radius: 0px 0px 4px 4px;
    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+   &_big {
+      width: 320px;
+   }
+   &_small {
+      width: 266px;
+      height: 119px;
+   }
 }
 .dropdown__btn.dropdown__btn_clicked+ .dropdown__content {
    display: block;
@@ -123,7 +142,7 @@
    cursor: default;
    }
 }
-.dropdown__number-of-people {
+.dropdown__number-of-people, .dropdown__number-of-items {
    @extend %font-h3;
    display: flex;
    justify-content: center;
