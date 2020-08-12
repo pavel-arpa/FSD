@@ -1,0 +1,85 @@
+//- {
+//-    title:
+//-    items: ["item1", "item2"...]
+//-    checked: [1, 2, 3...]
+//-    expanded: true
+//-    type: expandable / rich / buttons
+//-    subtitles: []
+//- }
+
+mixin checkbox-list(arg)
+   - if (arg.checked != undefined) {
+      - var arrayChecked = arg.checked
+   - } else {
+      - var arrayChecked = []
+   - }
+   .checkbox-list
+      - if (arg.type == "expandable") {
+         - if (arg.expanded == true) {
+            button(class="checkbox-list__btn checkbox-list__btn_clicked" id="expandableCheckbox")
+               h3.checkbox-list__title= arg.title
+               <svg class="checkbox-list__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M10.5938 0.57812L12 1.98437L6 7.98437L3.49418e-06 1.98437L1.40625 0.578122L6 5.17187L10.5938 0.57812Z" fill="#1F2041" fill-opacity="0.5"/>
+               </svg>
+         - } else {
+            button.checkbox-list__btn.checkbox-list__btn_default
+               h3.checkbox-list__title= arg.title
+               <svg class="checkbox-list__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M10.5938 0.57812L12 1.98437L6 7.98437L3.49418e-06 1.98437L1.40625 0.578122L6 5.17187L10.5938 0.57812Z" fill="#1F2041" fill-opacity="0.5"/>
+               </svg>
+         - }
+         .checkbox-list__items
+            - for (let i=0; i<arg["items"].length; i++) {
+               - if (arrayChecked.indexOf(i+1) != -1) {
+                  .checkbox-list__checkbox-wrapper
+                     label(class="checkbox-list__checkbox-label")= arg.items[i]
+                        input(class="checkbox-list__checkbox" name= arg.items[i] type="checkbox" checked="checked")
+                        span.checkbox-list__checkmark
+               - } else {
+                  .checkbox-list__checkbox-wrapper
+                     label(class="checkbox-list__checkbox-label")= arg.items[i]
+                        input(class="checkbox-list__checkbox" name= arg.items[i] type="checkbox")
+                        span.checkbox-list__checkmark
+               - }
+            - }
+      - }
+
+      - if (arg.type == "buttons") {
+         .checkbox-list__btn
+            h3.checkbox-list__title= arg.title
+         .checkbox-list__items
+            - for (let i=0; i<arg["items"].length; i++) {
+               - if (arrayChecked.indexOf(i+1) != -1) {
+                  .checkbox-list__checkbox-wrapper
+                     label(class="checkbox-list__checkbox-label")= arg.items[i]
+                        input(class="checkbox-list__checkbox" name= arg.items[i] type="checkbox" checked="checked")
+                        span.checkbox-list__checkmark
+               - } else {
+                  .checkbox-list__checkbox-wrapper
+                     label(class="checkbox-list__checkbox-label")= arg.items[i]
+                        input(class="checkbox-list__checkbox" name= arg.items[i] type="checkbox")
+                        span.checkbox-list__checkmark
+               - }
+            - }
+      - }
+
+      - if (arg.type == "rich") {
+         .checkbox-list__btn
+            h3.checkbox-list__title= arg.title
+         .checkbox-list__items
+            - for (let i=0; i<arg["items"].length; i++) {
+               - if (arrayChecked.indexOf(i+1) != -1) {
+                  .checkbox-list__checkbox-wrapper.
+                     label(class="checkbox-list__checkbox-label checkbox-list__checkbox-label_bold")= arg.items[i]
+                        input(class="checkbox-list__checkbox" name= arg.items[i] type="checkbox" checked="checked")
+                        span.checkbox-list__checkmark
+                     span.checkbox-list__checkbox-subtitle= arg.subtitles[i]
+               - } else {
+                  .checkbox-list__checkbox-wrapper
+                     label(class="checkbox-list__checkbox-label checkbox-list__checkbox-label_bold")= arg.items[i]
+                        input(class="checkbox-list__checkbox" name= arg.items[i] type="checkbox")
+                        span.checkbox-list__checkmark
+                     span.checkbox-list__checkbox-subtitle= arg.subtitles[i]
+               - }
+            - }
+      - }

@@ -1,7 +1,9 @@
 //- include ../../../../includes/components/global/logo/logo.pug
 include ../../../../includes/components/dropdown/dropdown.pug
 include ../../../../includes/components/text-field/text-field.pug
-include ../../../../includes/components/expandable-checkbox-list/expandable-checkbox-list.pug
+include ../../../../includes/components/checkbox-list/checkbox-list.pug
+include ../../../../includes/components/bullet-list/bullet-list.pug
+include ../../../../includes/components/subscription-text-field/subscription-text-field.pug
 
 .form-elements-wrapper
    .form-elements-wrapper__inputs-wrapper
@@ -9,4 +11,19 @@ include ../../../../includes/components/expandable-checkbox-list/expandable-chec
       +text-field({title: "text field", text: "This is pretty awesome", status: "hover / focus", mod: "focused"})
       +dropdown({title: "dropdown", text: "Сколько гостей", status: "default", type: "people"})
       +text-field({title: "masked text field", text: "ДД.ММ.ГГГГ", status: "default", mod: "focused", mask: true})
-      +expandable-checkbox-list({title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], checked: [2, 3, 4], expanded: true})
+      +dropdown({title: "dropdown", status: "default", type: "accommodation"})
+      +checkbox-list({type: "expandable", title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], checked: [2, 3, 4], expanded: true})
+      +checkbox-list({type: "buttons", title: "checkbox button", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], checked: [2, 3]})
+      +checkbox-list({type: "rich", title: "rich checkbox button", items: ["Широкий коридор", "Помошник для инвалидов"], subtitles: ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист и проводит до номера."]})
+      +bullet-list({title: "bullet-list", items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
+      +subscription-text-field({title: "subscription text field"})
+
+
+
+
+
+
+
+
+
+
