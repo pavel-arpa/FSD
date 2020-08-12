@@ -1,0 +1,14 @@
+//- {
+//-    title:
+//-    items: []
+//- }
+
+
+mixin bullet-list(arg)
+   .bullet-list
+      h3.bullet-list__title= arg.title
+      - for (let i=0; i<arg.items.length; i++) {
+         .bullet-list__item-wrapper
+            span.bullet-list__marker
+            span.bullet-list__item= arg.items[i]
+      - }
