@@ -4,6 +4,9 @@ include ../../../../includes/components/text-field/text-field.pug
 include ../../../../includes/components/checkbox-list/checkbox-list.pug
 include ../../../../includes/components/bullet-list/bullet-list.pug
 include ../../../../includes/components/subscription-text-field/subscription-text-field.pug
+include ../../../../includes/components/radio-buttons/radio-buttons.pug
+include ../../../../includes/components/toggle/toggle.pug
+include ../../../../includes/components/like-button/like-button.pug
 
 .form-elements-wrapper
    .form-elements-wrapper__inputs-wrapper
@@ -17,6 +20,13 @@ include ../../../../includes/components/subscription-text-field/subscription-tex
       +checkbox-list({type: "rich", title: "rich checkbox button", items: ["Широкий коридор", "Помошник для инвалидов"], subtitles: ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист и проводит до номера."]})
       +bullet-list({title: "bullet-list", items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
       +subscription-text-field({title: "subscription text field"})
+      +radio-buttons({title: "radio buttons", items: ["Мужчина", "Женщина"]})
+      +toggle({title: "toggle", items: ["Получать спецпредложения", "Получать спецпредложения"], checked: [1]})
+      .like-button-wrapper
+         .like-button-wrapper__title= "like button"
+         .like-button-wrapper__buttons
+            +like-button({count: 2})
+            +like-button({count: 12, clicked: true})
 
 
 
