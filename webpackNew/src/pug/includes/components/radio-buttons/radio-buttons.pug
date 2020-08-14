@@ -1,0 +1,17 @@
+//- {
+//-    title:
+//-    items: []
+//- }
+
+mixin radio-buttons(arg)
+   .radio-buttons
+      h3.radio-buttons__title=arg.title
+      - for (let i=0; i<arg.items.length; i+=2) {
+         .radio-buttons__radio-wrapper
+            label.radio-buttons__label=arg.items[i]
+               input.radio-buttons__input(name=arg.title type="radio" checked="checked")
+               span.radio-buttons__ckeckmark
+            label.radio-buttons__label=arg.items[i+1]
+               input.radio-buttons__input(name=arg.title type="radio")
+               span.radio-buttons__ckeckmark
+      - }

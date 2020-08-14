@@ -1,0 +1,63 @@
+.radio-buttons {
+   display: felx;
+   flex-direction: column;
+   width: 260px;
+   &__title {
+      @extend %font-h3;
+      margin-bottom: 7px;
+   }
+   &__radio-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      padding-top: 10px;
+   }
+   &__label {
+      @extend %font-body;
+      line-height: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      padding-left: 30px;
+      padding-right: 20px;
+      cursor: pointer;
+   }
+   &__input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      cursor: pointer;
+   }
+   &__ckeckmark {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      text-align: right;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $dh25;
+      border-radius: 50%;
+      box-sizing: border-box;
+   }
+}
+
+.radio-buttons__label:hover span {
+      border: 1px solid $purple;
+}
+
+.radio-buttons__label input:checked {
+   & + span {
+      border: 1px solid $purple;
+   }
+   & + span::after {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      position: relative;
+      left: -3px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-radius: 50%;
+   }
+}
