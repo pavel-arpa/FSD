@@ -1,0 +1,22 @@
+//- {
+//-    title:
+//-    items: []
+//-    checked: []
+//- }
+
+mixin toggle(arg)
+   .toggle
+      h3.toggle__title= arg.title
+      - for (let i=0; i<arg.items.length; i++) {
+         - if (arg.checked.indexOf(i+1) != -1) {
+            .toggle__wrapper-button
+               label.toggle__label= arg.items[i]
+                  input.toggle__input(type="checkbox" checked="checked")
+                  span.toggle__checkmark
+         - } else {
+            .toggle__wrapper-button
+               label.toggle__label= arg.items[i]
+                  input.toggle__input(type="checkbox")
+                  span.toggle__checkmark
+         - }
+      - }
