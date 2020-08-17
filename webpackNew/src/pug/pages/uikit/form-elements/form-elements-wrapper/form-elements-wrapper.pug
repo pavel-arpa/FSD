@@ -7,6 +7,7 @@ include ../../../../includes/components/subscription-text-field/subscription-tex
 include ../../../../includes/components/radio-buttons/radio-buttons.pug
 include ../../../../includes/components/toggle/toggle.pug
 include ../../../../includes/components/like-button/like-button.pug
+include ../../../../includes/components/rate-button/rate-button.pug
 
 .form-elements-wrapper
    .form-elements-wrapper__inputs-wrapper
@@ -27,6 +28,12 @@ include ../../../../includes/components/like-button/like-button.pug
          .like-button-wrapper__buttons
             +like-button({count: 2})
             +like-button({count: 12, clicked: true})
+      .rate-button-wrapper
+         .rate-button-wrapper__title= "rate button"
+         .rate-button-wrapper__buttons
+            +rate-button({rating: 4})
+            +rate-button({rating: 5})
+
 
 
 
