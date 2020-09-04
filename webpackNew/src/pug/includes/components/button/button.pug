@@ -1,0 +1,19 @@
+//- {
+//-    text:
+//-    type: default/bordered/link/large
+//-    status: hover
+//- }
+
+mixin button(arg)
+   .button
+      case arg.type
+         when "bordered"
+            button.button__bg.button__bg_default
+               .button__inner-bg-wrapper
+                  .button__inner-bg
+                     .button__text.button__text_purple= arg.text
+
+         default
+            button.button__bg.button__bg_default
+               .button__text= arg.text
+
