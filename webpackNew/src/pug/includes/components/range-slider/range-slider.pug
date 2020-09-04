@@ -1,0 +1,19 @@
+//- {
+//-    title:
+//-    annotation:
+//- }
+
+mixin range-slider(arg)
+   .range-slider
+      .range-slider__wrapper-top
+         .range-slider__title= arg.title
+         .range-slider__price-range
+      .range-slider__wrapper-slider
+         .range-slider__stripe
+         .range-slider__wrapper-inner-stripe
+            div(class="range-slider__stripe range-slider__stripe_gradient")
+            div(class="range-slider__point range-slider__point_first")
+            div(class="range-slider__point range-slider__point_second")
+      if arg.annotation
+         .range-slider__annotation= arg.annotation
+

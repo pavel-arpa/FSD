@@ -5,7 +5,7 @@
 
 // Заголовки
 .dropdown__label {
-   @extend %font-h3
+   @extend %font-h3;
 }
 .dropdown__label_extra {
    font-family: "Montserrat";

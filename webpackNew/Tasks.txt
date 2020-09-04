@@ -1,1 +1,2 @@
-Range Slider  с помощью drag and drop
+Range Slider
+   x и y раздели и округли, а потом умножь на что разделил

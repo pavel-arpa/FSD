@@ -8,6 +8,8 @@ include ../../../../includes/components/radio-buttons/radio-buttons.pug
 include ../../../../includes/components/toggle/toggle.pug
 include ../../../../includes/components/like-button/like-button.pug
 include ../../../../includes/components/rate-button/rate-button.pug
+include ../../../../includes/components/range-slider/range-slider.pug
+
 
 .form-elements-wrapper
    .form-elements-wrapper__inputs-wrapper
@@ -33,6 +35,7 @@ include ../../../../includes/components/rate-button/rate-button.pug
          .rate-button-wrapper__buttons
             +rate-button({rating: 4})
             +rate-button({rating: 5})
+      +range-slider({title: "range slider"})
 
 
 
