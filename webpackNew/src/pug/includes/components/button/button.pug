@@ -11,8 +11,10 @@ mixin button(arg)
             button.button__bg.button__bg_default
                .button__inner-bg-wrapper
                   .button__inner-bg
-                     .button__text.button__text_purple= arg.text
-
+                     .button__text.button__text_purple-lh40= arg.text
+         when "link"
+            button.button__link
+               .button__text.button__text_purple-lh15= arg.text
          default
             button.button__bg.button__bg_default
                .button__text= arg.text

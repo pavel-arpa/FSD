@@ -13,7 +13,7 @@
          background: linear-gradient(180deg, rgba(189, 158, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
       }
       // Принудительно
-      &_hover {
+      &_hovering {
          background: linear-gradient(180deg, rgba(189, 158, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
          border-radius: 22px;
       }
@@ -37,9 +37,24 @@
       @extend %font-h3;
       line-height: 44px;
       color: #fff;
-      &_purple {
+      &_purple-lh40 {
          color: $purple;
          line-height: 40px;
       }
+      &_purple-lh15 {
+         color: $purple;
+         line-height: 15px;
+         &:hover {
+            color: $dh50;
+         }
+      &_purple-lh15-hovering {
+         color: $dh50;
+         line-height: 15px;
+      }
+      }
+   }
+
+   &__link {
+      background-color: #fff;
    }
 }
