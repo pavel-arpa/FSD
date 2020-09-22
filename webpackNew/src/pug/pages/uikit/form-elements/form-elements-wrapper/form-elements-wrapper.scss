@@ -41,3 +41,10 @@
    margin-bottom: 16px;
    }
 }
+
+.pagination-wrapper {
+   &__title {
+   @extend %font-h3;
+   margin-bottom: 16px;
+   }
+}

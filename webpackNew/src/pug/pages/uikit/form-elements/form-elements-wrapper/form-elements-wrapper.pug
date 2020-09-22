@@ -10,6 +10,8 @@ include ../../../../includes/components/like-button/like-button.pug
 include ../../../../includes/components/rate-button/rate-button.pug
 include ../../../../includes/components/range-slider/range-slider.pug
 include ../../../../includes/components/button/button.pug
+include ../../../../includes/components/pagination/pagination.pug
+include ../../../../includes/components/icon-text-list/icon-text-list.pug
 
 
 .form-elements-wrapper
@@ -37,11 +39,27 @@ include ../../../../includes/components/button/button.pug
             +rate-button({rating: 4})
             +rate-button({rating: 5})
       +range-slider({title: "range slider"})
+
       .button-wrapper
          .button-wrapper__title= "buttons"
          +button({text: "click me", type: "default"})
+         +button({text: "click me", type: "default", status: "hovering"})
          +button({text: "click me", type: "bordered"})
+         +button({text: "click me", type: "bordered", status: "hovering"})
          +button({text: "click me", type: "link"})
+         +button({text: "click me", type: "link", status: "hovering"})
+         +button({text: "Перейти к оплате", type: "large"})
+
+      .pagination-wrapper
+         .pagination-wrapper__title= "pagination"
+         +pagination({count: 15})
+
+      +icon-text-list({logoType: "comfort", title: "Комфорт", text: "Шумопоглощающие стены"})
+      +icon-text-list({logoType: "convenience", title: "Удобство", text: "Окно в каждой из спален"})
+      +icon-text-list({logoType: "cosiness", title: "Уют", text: "Номер оснащен камином"})
+
+
+
 
 
 
