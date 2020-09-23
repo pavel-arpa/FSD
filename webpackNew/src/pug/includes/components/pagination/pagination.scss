@@ -1,0 +1,43 @@
+.pagination {
+   &__buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 240px;
+      margin-bottom: 10px;
+   }
+   &__page-link {
+      width: 40px;
+      height: 40px;
+      @extend %font-body;
+      line-height: 40px;
+      display: flex;
+      justify-content: space-around;
+      &_current {
+         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+         border-radius: 22px;
+         color: #fff;
+         font-weight: bold;
+      }
+   }
+   &__empty-text {
+      width: 40px;
+      height: 40px;
+      @extend %font-body;
+      line-height: 40px;
+      display: flex;
+      justify-content: space-around;
+   }
+   &__button-next {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border-radius: 22px;
+   }
+   &__arrow {
+      margin-top: 2px;
+   }
+   &__annotation {
+      @extend %font-body;
+   }
+}

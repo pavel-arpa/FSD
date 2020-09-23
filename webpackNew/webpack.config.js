@@ -104,10 +104,10 @@ module.exports = {
                  from: path.resolve(__dirname, 'src/favicon.ico'),
                  to: path.resolve(__dirname, 'dist')
              },
-            //  {
-            //     from: path.resolve(__dirname, './src/pug/includes/components/expandable-checkbox-list/expandable-checkbox-list.svg'),
-            //     to: path.resolve(__dirname, 'dist/img')
-            //  }
+             {
+                from: path.resolve(__dirname, './src/pug/includes/components/feedback/feedback__image.png'),
+                to: path.resolve(__dirname, 'dist/img')
+             }
          ]
       }),
       new MiniCssExtractPlugin({
@@ -161,11 +161,18 @@ module.exports = {
          },
          {
             test: /\.(png|jpg|svg|gif)$/,
-            use: ['file-loader']
+            use: ['file-loader'],
+            // options: {
+            //    name: '[name].[ext]',
+            //    outputPath: 'static/images/',
+            // },
          },
          {
             test: /\.(ttf|woff|woff2|eot)$/,
-            use: ['file-loader']
+            use: ['file-loader'],
+            // options: {
+            //    outputPath: 'fonts/',
+            // },
          },
          { 
             test: /\.js$/, 
