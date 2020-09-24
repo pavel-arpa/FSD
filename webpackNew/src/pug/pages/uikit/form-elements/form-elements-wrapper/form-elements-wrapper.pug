@@ -13,6 +13,7 @@ include ../../../../includes/components/button/button.pug
 include ../../../../includes/components/pagination/pagination.pug
 include ../../../../includes/components/icon-text-list/icon-text-list.pug
 include ../../../../includes/components/feedback/feedback.pug
+include ../../../../includes/components/date-dropdown/date-dropdown.pug
 
 .form-elements-wrapper
    .form-elements-wrapper__inputs-wrapper
@@ -60,4 +61,5 @@ include ../../../../includes/components/feedback/feedback.pug
       
       +feedback({name: "Мурад Сарафанов", likes: 12, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", photo: "feedback__image", activity: "5 дней назад"})
 
+      +date-dropdown({id_left: 000001, id_right: 000002})
 
