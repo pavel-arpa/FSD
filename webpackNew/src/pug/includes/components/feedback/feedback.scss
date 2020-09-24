@@ -1,0 +1,40 @@
+.feedback {
+   max-width: 711px;
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   &__profile-wrapper {
+      width: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   &__photo {
+      width: 48px;
+      height: 48px;
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+      border-radius: 32px;
+      margin-bottom: 12px;
+   }
+   &__text-wrapper {
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+   }
+   &__name {
+      @extend %font-body;
+      font-weight: bold;
+      line-height: 24px;
+   }
+   &__activity {
+      @extend %font-body;
+      line-height: 24px;
+      padding-bottom: 10px;
+   }
+   &__text {
+      @extend %font-body;
+   }
+
+}
