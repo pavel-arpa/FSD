@@ -1,10 +1,9 @@
-//- {
-   id_left:
-   id_right:
-//- }
 
 mixin date-dropdown(arg)
    .date-dropdown
       .date-dropdown__left
-         input.date-dropdown.text-field(id="000001")
+         label.date-dropdown__label= "Прибытие"
+            input.date-dropdown__input(placeholder="ДД.ММ.ГГГГ" type="text" data-range="true" data-multiple-dates-separator=" - " class="datepicker-here" readonly)
       .date-dropdown__right
+         label.date-dropdown__label= "Выезд"
+            input.date-dropdown__input(placeholder="ДД.ММ.ГГГГ" readonly)
