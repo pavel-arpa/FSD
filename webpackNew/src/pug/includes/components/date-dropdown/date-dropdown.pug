@@ -1,9 +1,19 @@
+//- {
+//-   type
+//- }
+
 
 mixin date-dropdown(arg)
    .date-dropdown
+      - if (arg.type == 'double') {
       .date-dropdown__left
          label.date-dropdown__label= "Прибытие"
             input.date-dropdown__input(placeholder="ДД.ММ.ГГГГ" type="text" data-range="true" data-multiple-dates-separator=" - " class="datepicker-here" readonly)
       .date-dropdown__right
          label.date-dropdown__label= "Выезд"
             input.date-dropdown__input(placeholder="ДД.ММ.ГГГГ" readonly)
+      - } else {
+         date-dropdown__main
+            label.date-dropdown__label= "Даты пребывания в отеле"
+               input.date-dropdown__input(placeholder="ДД ммм - ДД ммм" type="text" data-range="true" data-multiple-dates-separator=" - " class="datepicker-here" readonly)
+      - }
