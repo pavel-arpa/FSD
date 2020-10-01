@@ -137,9 +137,9 @@
    cursor: pointer;
    user-select: none;
    &_unavailable {
-   color: $dh25;
-   border: 1px solid $dh5;
-   cursor: default;
+      color: $dh25;
+      border: 1px solid $dh5;
+      cursor: default;
    }
 }
 .dropdown__number-of-people, .dropdown__number-of-items {

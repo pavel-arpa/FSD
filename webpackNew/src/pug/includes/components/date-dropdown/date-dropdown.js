@@ -57,10 +57,6 @@ for (let x=0; x<len; x++) {
          }
       })
 
-      const acceptButton = document.querySelectorAll("[data-action='today']")
-      $(acceptButton).on('click', function() {
-         $(inputs[0]).data('datepicker').hide()
-      })
       
       inputs[1].addEventListener('click', function() {
          if (!document.querySelector('.datepicker').classList.contains('active')) {
@@ -82,6 +78,12 @@ for (let x=0; x<len; x++) {
             days: 'MM yyyy'
          },
          dateFormat: 'd M'
+      })
+   }
+   const acceptButton = document.querySelectorAll("[data-action='today']")
+   for (let i = 0; i < acceptButton.length; i++) {
+      acceptButton[i].addEventListener('click', function() {
+         $('#'+newId).data('datepicker').hide()
       })
    }
 }

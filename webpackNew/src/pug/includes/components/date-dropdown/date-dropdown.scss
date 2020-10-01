@@ -1,10 +1,28 @@
 .date-dropdown {
    display: flex;
    flex-direction: row;
-   &__left {
-
+   width: 32rem;
+   justify-content: space-between;
+   &__label {
+      @extend %font-h3;
    }
    &__input {
-      
+      @extend %font-body;
+      cursor: pointer;
+      height: 4.4rem;
+      width: 15rem;
+      border: 1px solid $dh25;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 13px 15px;
+      margin-top: 0.6rem;
+      &_single {
+         width: 26rem;
+      }
+   }
+   &__arrow {
+      width: 4.4rem;
+      margin-left: -4.7rem;
+      cursor: pointer;
    }
 }
