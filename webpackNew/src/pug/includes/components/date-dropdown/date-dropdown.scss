@@ -26,3 +26,200 @@
       cursor: pointer;
    }
 }
+
+
+// Стили для календаря (самого плагина)
+.datepicker {
+   width: 31.9rem;
+}
+.datepicker- {
+   &-nav {
+      border: none;
+      padding: 0;
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+      max-width: 28rem;
+      min-height: 2.4rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 auto;
+      &-title {
+         @extend %font-h2;
+         &:hover {
+            background: #fff;
+         }
+      }
+      &-action {
+         &:hover {
+            background: rgba(0, 0, 0, 0);
+         }
+      }
+   }
+   &-content {
+      width: 28rem;
+      margin: 0 auto;
+      padding: 0;
+   }
+   &-cell {
+      border-radius: 2rem;
+      &-day {
+         @extend %font-body;
+         width: 4rem;
+         height: 4rem;
+      }
+      &-year {
+         @extend %font-body;
+         // width: 4rem;
+         height: 4rem;
+      }
+      &-month {
+         height: 4rem;
+      }
+   }
+   &-days-names {
+      width: 28rem;
+      margin: 0;
+   }
+   &-day-name {
+      @extend %font-body;
+      font-weight: bold;
+      text-transform: capitalize;
+      color: $purple;
+      width: 4rem;
+      height: 4rem;
+   }
+   &-buttons {
+      border: none;
+      padding: 2rem 2rem;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+   }
+   &-button {
+      @extend %font-h3;
+      color: $purple;
+      height: 1.5rem;
+      flex: none;
+      &:hover {
+         background: #fff;
+         color: $dh50;
+      }
+   }
+}
+
+.datepicker--nav-action {
+   path {
+      fill: $purple;
+      stroke: 0;
+      stroke-width: 0;
+   }
+   svg {
+      width: 2.4rem;
+      height: 2.4rem;
+   }
+}
+
+.-focus- {
+   border-radius: 2rem;
+
+}
+.-selected- {
+   border-radius: 2rem;
+   // background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important;
+}
+
+// Работа с отрисовкой ячеек и логикой их поведения
+// .-range-from-.-selected- + .-in-range-::before {
+//    content: "";
+//    position: absolute;
+//    left: -2rem;
+//    width: 2rem;
+//    height: 4rem;
+//    background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%);
+//    z-index: -3;
+// }
+// .-range-from-.-focus- + .-in-range-::before {
+//    content: "";
+//    position: absolute;
+//    left: -2rem;
+//    width: 2rem;
+//    height: 4rem;
+//    background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%);
+//    z-index: -3;
+
+// }
+// // .-range-from-.-selected- + .-range-to-::before {
+// //    content: "";
+// //    position: absolute;
+// //    left: -2rem;
+// //    width: 4rem;
+// //    height: 4rem;
+// //    background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%);
+// //    z-index: -1;
+// // }
+// // .-range-from-.-focus- + .-range-to-::before {
+// //    // content: "";
+// //    // position: absolute;
+// //    // left: -2rem;
+// //    // width: 4rem;
+// //    // height: 4rem;
+// //    // background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%);
+// //    // z-index: -1;
+// // }
+// .-range-from- + .-range-to-::after {
+//    content: "";
+//    position: absolute;
+//    left: -2rem;
+//    // width: 4rem;
+//    // height: 4rem;
+//    // margin-left: -4rem;
+//    // background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%);
+//    // z-index: -1;
+//    background: url(date-dropdown__filling.svg) 0 0/4rem 4rem no-repeat;
+//    width: 4rem;
+//    height: 4rem;
+// }
+
+// .-in-range- + .-range-to-::before {
+//    content: "";
+//    position: absolute;
+//    left: 0rem;
+//    width: 2rem;
+//    height: 4rem;
+//    background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%) !important;
+//    z-index: -1;
+// }
+.-range-from- {
+   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important;
+   border-radius: 22px !important;
+   border: none !important;
+   font-weight: 700 !important;
+   color: #fff !important;
+   z-index: 3;
+}
+.-range-to- {
+   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important;
+   border-radius: 22px !important;
+   border: none !important;
+   color: #fff !important;
+   font-weight: 700 !important;
+   z-index: 3;
+}
+.-range-to-.-in-range-.-selected- {
+   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important;
+}
+.-in-range- {
+   background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%) !important;
+}
+.-current- {
+   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+   border-radius: 22px;
+   color: #fff !important;
+   font-weight: bold;
+}
+
+
+
+
+
