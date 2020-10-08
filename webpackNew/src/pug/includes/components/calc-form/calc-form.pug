@@ -1,14 +1,28 @@
+include ../date-dropdown/date-dropdown.pug
+include ../button/button.pug
+include ../dropdown/dropdown.pug
 
 mixin calc-form(arg)
   .calc-form
     form(method="POST").calc-form__form
       .calc-form__top
-        h1.calc-form__number= "№888"
+        h1.calc-form__number= "888"
         p.calc-form__type-of-number= "ЛЮКС"
-        p.calc-form__price= "9 990₽ в сутки";
+        p.calc-form__price= "9990"
+        span.calc-form__price-per= "в сутки"
       .calc-form__main
         +date-dropdown({type: "double"})
         +dropdown({type: "people", title: "Гости"})
       .calc-form__calculating
-        
-      
+        p.calc-form__calc-string
+          span.calc-form__total
+        p.calc-form__calc-string
+          span.calc-form__info.calc-form__info_first
+          span.calc-form__total
+        p.calc-form__calc-string
+          span.calc-form__info.calc-form__info_second
+          span.calc-form__total
+        p.calc-form__to-sum= "Итог"
+          hr.calc-form__points
+          span.calc-form__result
+      +button({type: "large", text: "Забронировать"})

@@ -17,6 +17,16 @@ $.fn.datepicker.language['ru'] =  {
    firstDay: 1
 }
 
+let inputsArr = {
+   newValue(arg) {
+      x = []
+      x.push(arg)
+      x = toString(x)
+      if (x)
+      this.x = []
+
+   }
+}
 
 // Присваеваем каждому date-dropdown свой id для уникальности и
 // удобств их обработки
@@ -47,7 +57,7 @@ for (let x=0; x<len; x++) {
          onSelect: function(formattedDate, date, inst) {
             inputs[0].value = formattedDate.split(' - ')[0]
             savingFormatDate = formattedDate.split(' - ')[0]
-            
+            inputsArr.newValue()
             if (!(formattedDate.split(' - ')[1] == undefined)) {
                inputs[1].value = formattedDate.split(' - ')[1]
             }
