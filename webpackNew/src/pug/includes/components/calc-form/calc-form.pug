@@ -1,0 +1,14 @@
+
+mixin calc-form(arg)
+  .calc-form
+    form(method="POST").calc-form__form
+      .calc-form__top
+        h1.calc-form__number= "№888"
+        p.calc-form__type-of-number= "ЛЮКС"
+        p.calc-form__price= "9 990₽ в сутки";
+      .calc-form__main
+        +date-dropdown({type: "double"})
+        +dropdown({type: "people", title: "Гости"})
+      .calc-form__calculating
+        
+      
