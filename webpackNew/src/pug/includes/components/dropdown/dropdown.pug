@@ -12,7 +12,7 @@ mixin dropdown(arg)
          if arg.status
             p.dropdown__label_extra= arg.status
       - if (arg.type == "people") {
-         button(class="dropdown__btn dropdown__btn_big")
+         button(type="button" class="dropdown__btn dropdown__btn_big")
             span.dropdown__btn-title= "Сколько гостей"
             <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="dropdown__path" d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill-opacity="0.75"/>
@@ -37,8 +37,8 @@ mixin dropdown(arg)
                   span.dropdown__number-of-people= "0"
                   span.dropdown__circle.dropdown__circle_unavailable= "+"
             li.dropdown__btn-settings
-               button(class="dropdown__btn-clear" type="reset")= "очистить"
-               button.dropdown__btn-submit= "применить"
+               button(type="button" class="dropdown__btn-clear")= "очистить"
+               button(type="button").dropdown__btn-submit= "применить"
       - }
       - if (arg.type == "accommodation") {
          button(class="dropdown__btn dropdown__btn_small")
