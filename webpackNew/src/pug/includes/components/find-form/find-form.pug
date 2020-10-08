@@ -8,10 +8,10 @@ include ../button/button.pug
 
 mixin find-form(arg)
   .find-form
-    form(method="POST").find-form__form
+    form.find-form__form
       h1.find-form__title= arg.title
       .find-form__inputs-wrapper
         +date-dropdown({type: "double"})
-        +dropdown({type: "people", title: "Гости"})
+        +dropdown({type: "people", title: "Гости", })
       .find-form__button
         +button({type: "large", text: "Подобрать номер"})
