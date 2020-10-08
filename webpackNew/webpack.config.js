@@ -63,7 +63,8 @@ module.exports = {
    entry: {
       main: ['@babel/polyfill', './index.js'],
       colorsAndType: ['@babel/polyfill', './colors-and-type.js'],
-      formElements: ['@babel/polyfill', './form-elements.js']
+      formElements: ['@babel/polyfill', './form-elements.js'],
+      cards: ['@babel/polyfill', './cards.js']
    },
    output: {
       filename: filename('js'),
@@ -96,6 +97,11 @@ module.exports = {
          filename: 'form-elements.html',
          template: './pug/pages/uikit/form-elements.pug',
          chunks: ['formElements']
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'cards.html',
+         template: './pug/pages/uikit/cards.pug',
+         chunks: ['cards']
       }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
