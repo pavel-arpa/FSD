@@ -43,12 +43,12 @@ include ../../../../includes/components/date-dropdown/date-dropdown.pug
 
       .button-wrapper
          .button-wrapper__title= "buttons"
-         +button({text: "click me", type: "default"})
-         +button({text: "click me", type: "default", status: "hovering"})
-         +button({text: "click me", type: "bordered"})
-         +button({text: "click me", type: "bordered", status: "hovering"})
-         +button({text: "click me", type: "link"})
-         +button({text: "click me", type: "link", status: "hovering"})
+         +button({text: "click me", type: "default", input-type: "submit"})
+         +button({text: "click me", type: "default", status: "hovering", input-type: "submit"})
+         +button({text: "click me", type: "bordered", input-type: "submit"})
+         +button({text: "click me", type: "bordered", status: "hovering", input-type: "submit"})
+         +button({text: "click me", type: "link", input-type: "submit"})
+         +button({text: "click me", type: "link", status: "hovering", input-type: "submit"})
          +button({text: "Перейти к оплате", type: "large"})
 
       .pagination-wrapper
@@ -63,6 +63,9 @@ include ../../../../includes/components/date-dropdown/date-dropdown.pug
 
       +date-dropdown({type: "standart"})
       +date-dropdown({type: "double"})
+      //- <div class="datepicker-here"></div>
+
+
 
 
 
