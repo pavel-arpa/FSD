@@ -136,23 +136,34 @@
    height: 4rem;
 }
 
-.-in-range- + .-range-to-::before {
+.-range-to-::before {
    content: '';
    position: absolute;
    left: 0rem;
    background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%);
    width: 2rem;
    height: 4rem;
-   z-index: -1;
+   z-index: -3;
 }
-.-range-from- + .-range-to-::before {
+.-range-from-::before {
    content: '';
    position: absolute;
-   left: 0rem;
+   left: 50%;
    background: linear-gradient(180deg, #bb9cff3f 0%, #8BA4F93f 100%);
-   width: 2rem;
+   width: 50%;
    height: 4rem;
-   z-index: -1;
+   z-index: -3;
+}
+.-range-to-.-range-from-::after {
+   content: "";
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: url("./date-dropdown__filling.svg") no-repeat;
+   background-position: 100% 100%;
+   background-size: 2rem 4rem;
+   z-index: -2;
 }
 
 .-range-from- {
