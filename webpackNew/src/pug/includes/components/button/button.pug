@@ -2,7 +2,7 @@
 //-    text:
 //-    type: default/bordered/link/large
 //-    status: hovering
-//-    input_type:
+//-    input-type:
 //- }
 
 mixin button(arg)
@@ -10,19 +10,19 @@ mixin button(arg)
       case arg.type
          when "bordered"
             - if(arg.status == "hovering") {
-               button(type=arg.input_type).button__bg.button__bg_hovering
+               button(type=arg.input-type).button__bg.button__bg_hovering
                   .button__inner-bg-wrapper
                      .button__inner-bg
                         .button__text.button__text_purple-lh40= arg.text            
             - } else {
-               button(type=arg.input_type).button__bg.button__bg_default
+               button(type=arg.input-type).button__bg.button__bg_default
                   .button__inner-bg-wrapper
                      .button__inner-bg
                         .button__text.button__text_purple-lh40= arg.text
             - }
          when "link"
             - if(arg.status == "hovering") {
-               button(type=arg.input_type).button__link
+               button(type=arg.input-type).button__link
                   .button__text.button__text.button__text_hovering= arg.text
             - } else {
                button.button__link
@@ -35,9 +35,9 @@ mixin button(arg)
                   <path d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" fill="white"/>
          default
             - if(arg.status == "hovering") {
-               button(type=arg.input_type).button__bg.button__bg_hovering
+               button(type=arg.input-type).button__bg.button__bg_hovering
                   .button__text= arg.text
             - } else {
-               button(type=arg.input_type).button__bg.button__bg_default
+               button(type=arg.input-type).button__bg.button__bg_default
                   .button__text= arg.text
             - }
