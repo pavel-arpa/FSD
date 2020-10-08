@@ -1,2 +1,17 @@
-mixin find-form()
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+//- {
+//-   title:
+//- }
+
+mixin find-form(arg)
   .find-form
+    form.find-form__form
+      h1.find-form__title= arg.title
+      .find-form__inputs-wrapper
+        +date-dropdown({type: "double"})
+        +dropdown({type: "people", title: "Гости", })
+      .find-form__button
+        +button({type: "large", text: "Подобрать номер"})
