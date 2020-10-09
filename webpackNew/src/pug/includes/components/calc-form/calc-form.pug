@@ -10,19 +10,31 @@ mixin calc-form(arg)
         p.calc-form__type-of-number= "ЛЮКС"
         p.calc-form__price= "9990"
         span.calc-form__price-per= "в сутки"
+
       .calc-form__main
         +date-dropdown({type: "double"})
         +dropdown({type: "people", title: "Гости"})
+
       .calc-form__calculating
-        p.calc-form__calc-string
-          span.calc-form__total
-        p.calc-form__calc-string
-          span.calc-form__info.calc-form__info_first
-          span.calc-form__total
-        p.calc-form__calc-string
-          span.calc-form__info.calc-form__info_second
-          span.calc-form__total
-        p.calc-form__to-sum= "Итог"
-          hr.calc-form__points
-          span.calc-form__result
+        //- Поочередно все элементы, где производятся вычисления
+        .calc-form__string-wrapper
+          p.calc-form__calc-string= "Цена за проживание:"
+          span.calc-form__total= 0
+
+        .calc-form__string-wrapper
+          p.calc-form__calc-string= "Сбор за услуги:"
+          span.calc-form__info= "i"
+          span.calc-form__total= 0
+
+        .calc-form__string-wrapper
+          p.calc-form__calc-string= "Сбор за дополнительные услуги:"
+          span.calc-form__info= "i"
+          span.calc-form__total= 0
+
+
+      .calc-form__sum-wrapper
+        p.calc-form__to-sum= "Итого"
+        .calc-form__points
+        span.calc-form__result= 0
+
       +button({type: "large", text: "Забронировать"})

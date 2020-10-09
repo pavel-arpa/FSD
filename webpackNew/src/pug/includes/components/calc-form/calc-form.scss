@@ -11,6 +11,7 @@
   border-radius: 4px;
   &__top {
     width: 32rem;
+    padding-top: 4rem;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -48,5 +49,72 @@
     font-size: 1.2rem;
     line-height: 1.8rem;
     font-weight: normal;
+  }
+  &__main {
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  &__calculating {
+    padding: 2rem 0 2rem 0;
+  }
+  &__string-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  &__calc-string {
+    @extend %font-body;
+    width: 21.4rem;
+    line-height: 1.8rem;
+  }
+  &__info {
+    @extend %font-body;
+    position: absolute;
+    left: 22rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $dh25;
+    padding-left: 0.7rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    line-height: 2rem;
+    border: 1px solid $dh25;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  &__total {
+    @extend %font-body;
+    &:after {
+      content: '₽';
+    }
+  }
+  &__sum-wrapper {
+    width: 32rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__to-sum {
+    @extend %font-h2;
+  }
+  &__points {
+    width: 24rem;
+    height: 0rem;
+    border: 1px dashed rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+  }
+  &__result {
+    @extend %font-h2;
+    &:after {
+      content: '₽';
+    }
   }
 }
