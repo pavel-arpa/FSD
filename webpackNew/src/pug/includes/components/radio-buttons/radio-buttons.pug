@@ -1,11 +1,13 @@
 //- {
 //-    title:
+//-    hasTitle: false
 //-    items: []
 //- }
 
 mixin radio-buttons(arg)
    .radio-buttons
-      h3.radio-buttons__title=arg.title
+      if arg.hasTitle
+         h3.radio-buttons__title=arg.title
       - for (let i=0; i<arg.items.length; i+=2) {
          .radio-buttons__radio-wrapper
             label.radio-buttons__label=arg.items[i]
