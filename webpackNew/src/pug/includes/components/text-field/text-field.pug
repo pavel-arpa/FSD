@@ -1,9 +1,9 @@
 //- {
 //-    title: 
-//-    text:
-//-    status:
-//-    mod:
-//-    mask:
+//-    text: ?
+//-    status: extra
+//-    mod: focused
+//-    mask: date
 //- }
 
 mixin text-field(arg)
@@ -20,7 +20,13 @@ mixin text-field(arg)
          br
       if arg.mod
          - var mod = `_${arg.mod}`
-         input(type="text" id=id_label, placeholder=arg.text class=`text-field__input text-field__input${mod}`)
+         if arg.type
+            input(type= arg.type id=id_label, placeholder=arg.text class=`text-field__input text-field__input${mod}`)
+         else
+            input(type="text" id=id_label, placeholder=arg.text class=`text-field__input text-field__input${mod}`)
       else
-         input(type="text" id=id_label, placeholder=arg.text class="text-field__input")
-      
+         if arg.type
+            input(type= arg.type id=id_label, placeholder=arg.text class="text-field__input")
+         else
+            input(type="text" id=id_label, placeholder=arg.text class="text-field__input")
+            
