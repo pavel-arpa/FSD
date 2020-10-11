@@ -1,0 +1,32 @@
+include ../button/button.pug
+include ../text-field/text-field.pug
+include ../radio-buttons/radio-buttons.pug
+include ../toggle/toggle.pug
+
+//- {
+//-   title:
+//- }
+
+mixin register-form(arg)
+  .register-form
+    form(method="POST").register-form__form
+      h1.register-form__title= arg.title
+
+      .register-form__wrapper-names
+        +text-field({text: "Имя"})
+        +text-field({text: "Фамилия"})
+        +radio-buttons({items: ["Мужчина", "Женщина"], hasTitle: false, title: "chooseGender"})
+        
+      +text-field({mask: "date", title: "Дата рождения", text: "ДД.ММ.ГГГГ"})
+
+      .register-form__wrapper-service-data
+        +text-field({title: "данные для входа в сервис", text: "Email"})
+        +text-field({text: "Пароль", type: "password"})
+        +toggle({items: ["Получать спецпредложения"], checked: []})
+      
+      +button({type: "large", text: "Перейти к оплате"})
+
+      .register-form__wrapper-has-account
+        p.register-form__has-account= "Уже есть аккаунт на Toxin"
+        +button({type: "bordered", text: "Войти"})
+
