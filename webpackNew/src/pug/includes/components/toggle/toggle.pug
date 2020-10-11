@@ -6,7 +6,8 @@
 
 mixin toggle(arg)
    .toggle
-      h3.toggle__title= arg.title
+      if arg.title
+         h3.toggle__title= arg.title
       - for (let i=0; i<arg.items.length; i++) {
          - if (arg.checked.indexOf(i+1) != -1) {
             .toggle__wrapper-button
