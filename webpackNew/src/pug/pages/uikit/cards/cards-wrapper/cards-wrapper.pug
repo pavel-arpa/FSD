@@ -1,9 +1,11 @@
 include ../../../../includes/components/find-form/find-form.pug
 include ../../../../includes/components/calc-form/calc-form.pug
 include ../../../../includes/components/register-form/register-form.pug
+include ../../../../includes/components/sign-in-form/sign-in-form.pug
 
 .cards-wrapper
   +find-form({title: "Найдём номера под ваши пожелания"})
   +calc-form({})
   .datepicker-here
   +register-form({title: "Регистрация аккаунта"})
+  +sign-in-form({title: "Войти"})

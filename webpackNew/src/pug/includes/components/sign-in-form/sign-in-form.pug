@@ -1,0 +1,21 @@
+include ../button/button.pug
+include ../text-field/text-field.pug
+
+//- {
+//-   title:
+//- }
+
+mixin sign-in-form(arg)
+  .sign-in-form
+    form(method="POST").sign-in-form__form
+      h1.sign-in-form__title= arg.title
+
+      .sign-in-form__wrapper-service-data
+        +text-field({text: "Email"})
+        +text-field({text: "Пароль", type: "password"})
+
+      +button({type: "large", text: "Войти"})
+
+      .sign-in-form__wrapper-create-account
+        p.sign-in-form__create-account= "Нет аккаунта на Toxin?"
+        +button({type: "bordered", text: "Создать"})
