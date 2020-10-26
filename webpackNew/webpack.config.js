@@ -106,14 +106,18 @@ module.exports = {
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
          patterns: [
-             {
-                 from: path.resolve(__dirname, 'src/favicon.ico'),
-                 to: path.resolve(__dirname, 'dist')
-             },
-             {
-                from: path.resolve(__dirname, './src/pug/includes/components/feedback/feedback__image.png'),
-                to: path.resolve(__dirname, 'dist/img')
-             }
+            {
+               from: path.resolve(__dirname, 'src/favicon.ico'),
+               to: path.resolve(__dirname, 'dist/assets-img')
+            },
+            {
+               from: path.resolve(__dirname, './src/pug/includes/components/feedback/feedback__image.png'),
+               to: path.resolve(__dirname, 'dist/img')
+            },
+            {
+              from: path.resolve(__dirname, './src/pug/includes/components/room-card/images'),
+              to: path.resolve(__dirname, 'dist/rooms-images')
+           }
          ]
       }),
       new MiniCssExtractPlugin({
