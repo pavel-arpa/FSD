@@ -1,0 +1,45 @@
+include ../rate-button/rate-button.pug
+
+//- {
+//-   src: []
+//-   number:
+//-   price:
+//-   rating:
+//-   reviews:
+//-   class:
+//- }
+
+mixin room-card(arg)
+  .room-card
+    .room-card__image-window
+      .room-card__wrapper-image
+        img(src=`./rooms-images/${arg.src[0]}` alt=`Отель номер ${arg.number}`).room-card__image.room-card__image_current
+        - for (let i = 1; i < arg.src.length; i++) {
+          img(src=`./rooms-images/${arg.src[i]}` alt=`Отель номер ${arg.number}`).room-card__image
+        - }
+
+      .room-card__selection
+        .room-card__wrapper-bg-arrow.room-card__wrapper-bg-arrow_left
+          svg(width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg").room-card__arrow
+            <path d="M7.42188 11.0928L6.01563 12.499L0.0156253 6.49902L6.01563 0.499024L7.42188 1.90527L2.82813 6.49902L7.42188 11.0928Z" fill="white"/>
+        .room-card__wrapper-bg-arrow.room-card__wrapper-bg-arrow_right
+          svg(width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg").room-card__arrow
+            <path d="M7.42188 11.0928L6.01563 12.499L0.0156253 6.49902L6.01563 0.499024L7.42188 1.90527L2.82813 6.49902L7.42188 11.0928Z" fill="white"/>
+
+      .room-card__points
+        .room-card__one-point.room-card__one-point_current
+        - for (let i = 1; i < arg.src.length; i++) {
+          .room-card__one-point
+        - }
+    
+    .room-card__inner
+      .room-card__info
+        h1.room-card__number= arg.number
+        p.room-card__number-class= arg.class
+        p.room-card__price= arg.price
+        span.room-card__price-per= "в сутки"
+      hr.room-card__line
+      .room-card__wrapper-rating
+        +rate-button({rating: arg.rating})        
+        p.room-card__count-reviews= arg.reviews
+
