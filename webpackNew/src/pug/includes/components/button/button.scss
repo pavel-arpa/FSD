@@ -8,16 +8,18 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      transition: opacity 0.1s ease;
       &_default {
          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
          border-radius: 22px;
       }
       &:hover {
-         background: linear-gradient(180deg, rgba(189, 158, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+         opacity: 0.5;
       }
       // Принудительно
       &_hovering {
-         background: linear-gradient(180deg, rgba(189, 158, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+         opacity: 0.5;
          border-radius: 22px;
       }
       &_large {
@@ -27,8 +29,8 @@
       }
    }
    &__inner-bg-wrapper {
-      width: 95px;
-      height: 44px;
+      min-width: 95px;
+      padding: 0.2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -36,14 +38,15 @@
    &__inner-bg {
       display: flex;
       justify-content: space-around;
-      height: 40px;
-      width: 95px;
+      min-height: 40px;
+      min-width: 95px;
       background-color: #ffffff;
       border-radius: 20px;
    }
    &__text {
       @extend %font-h3;
       line-height: 44px;
+      margin: auto 1.8rem auto 1.8rem;
       color: #fff;
       &_purple-lh40 {
          color: $purple;
