@@ -2,7 +2,6 @@ include ../../../../includes/components/find-form/find-form.pug
 include ../../../../includes/components/calc-form/calc-form.pug
 include ../../../../includes/components/register-form/register-form.pug
 include ../../../../includes/components/sign-in-form/sign-in-form.pug
-include ../../../../includes/components/room-card/room-card.pug
 
 .cards-wrapper
   +find-form({title: "Найдём номера под ваши пожелания"})
@@ -10,5 +9,3 @@ include ../../../../includes/components/room-card/room-card.pug
   .datepicker-here
   +register-form({title: "Регистрация аккаунта"})
   +sign-in-form({title: "Войти"})
-  +room-card({number: "888", src: ["888-1.png", "888-2.png", "888-3.png"], class: "ЛЮКС", price: 9990, rating: 5, reviews: 145})
-  +room-card({number: "840", src: ["840-1.png"], price: 9900, rating: 4, reviews: 65})
