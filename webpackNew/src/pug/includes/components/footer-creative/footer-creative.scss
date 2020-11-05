@@ -1,0 +1,38 @@
+@media screen and (max-width: 370px) {
+  .footer-creative__copyright {
+    font-size: 1.2rem;
+  }
+}
+
+.footer-creative {
+  display: grid;
+  grid-template-columns: minmax(0rem, 76.8rem);
+  grid-template-rows: 36.7rem;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  &__wrapper {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__div-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  &__copyright {
+    @extend %font-body;
+    margin-bottom: 2.5rem;
+  }
+  &__icons {
+    width: 11.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
