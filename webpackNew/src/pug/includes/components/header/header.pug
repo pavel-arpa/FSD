@@ -1,0 +1,65 @@
+include ../button/button.pug
+include ../logo-and-toxin/logo-and-toxin.pug
+
+//- {
+//-   login: #href
+//-   fixed: true
+//- }
+
+mixin header(arg)
+  if arg.fixed
+    .header.header_fixed
+      block content
+        .header__inner
+          .header__div-logo
+            +logo-and-toxin({})
+          .header__items
+            a(href=arg.hrefs[0]).header__item.header__item_bold= "О нас"
+            .header__item
+              a(href=arg.hrefs[1]).header__inner-item= "Услуги"
+              svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg").header__arrow-down
+                <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5"/>
+            a(href=arg.hrefs[2]).header__item= "Вакансии"
+            a(href=arg.hrefs[3]).header__item= "Новости"
+            .header__item
+              a(href=arg.hrefs[4]).header__inner-item= "Соглашения"
+              svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg").header__arrow-down
+                <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5"/>
+            - if (!arg.login) {
+              form(action=arg.hrefs[5]).header__item.header__form
+                +button({text: "Войти", type: "bordered"})
+              form(action=arg.hrefs[6]).header__item.header__form
+                +button({text: "Зарегестрироватся"})
+            - } else {
+              hr.header__hr
+              a(href=arg.login).header__item= "Юлий Цезарь"
+            - }
+
+  else
+    .header
+      .header__inner
+        .header__div-logo
+          +logo-and-toxin({})
+        .header__items
+          a(href=arg.hrefs[0]).header__item.header__item_bold= "О нас"
+          .header__item
+            a(href=arg.hrefs[1]).header__inner-item= "Услуги"
+            svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg").header__arrow-down
+              <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5"/>
+          a(href=arg.hrefs[2]).header__item= "Вакансии"
+          a(href=arg.hrefs[3]).header__item= "Новости"
+          .header__item
+            a(href=arg.hrefs[4]).header__inner-item= "Соглашения"
+            svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg").header__arrow-down
+              <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5"/>
+          - if (!arg.login) {
+            form(action=arg.hrefs[5]).header__item.header__form
+              +button({text: "Войти", type: "bordered"})
+            form(action=arg.hrefs[6]).header__item.header__form
+              +button({text: "Зарегестрироватся"})
+          - } else {
+            hr.header__hr
+            a(href=arg.login).header__item= "Юлий Цезарь"
+          - }
+
+
