@@ -1,7 +1,10 @@
 include ../../../../includes/components/header/header.pug
 include ../../../../includes/components/footer/footer.pug
+include ../../../../includes/components/footer-creative/footer-creative.pug
 
 .headers-and-footers-wrapper
-  //- +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"]})
-  //- +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"], login: "#"})
+  +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"]})
+  +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"], login: "#"})
   +footer({})
+  .headers-and-footers-wrapper__footer-creative
+    +footer-creative({})

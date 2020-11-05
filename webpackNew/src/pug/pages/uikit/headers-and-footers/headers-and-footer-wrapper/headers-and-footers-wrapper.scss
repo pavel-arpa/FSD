@@ -2,8 +2,11 @@ body {
   background: #F4F4F6;
 }
 .headers-and-footers-wrapper {
-  height: 100%;
+  height: 1350px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  &__footer-creative {
+    margin: 0 auto;
+  }
 }
