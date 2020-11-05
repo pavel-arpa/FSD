@@ -1,5 +1,5 @@
 .subscription-text-field {
-   width: 267px;
+   width: 26rem;
    display: flex;
    flex-direction: column;
    &__title {
@@ -12,8 +12,8 @@
    }
    &__input {
       @extend %font-body;
-      width: 267px;
-      height: 44px;
+      width: 26rem;
+      height: 4.4rem;
       border: 1px solid $dh25;
       border-radius: 4px;
       box-sizing: border-box;
@@ -34,9 +34,9 @@
    }
    &__submit {
       position: relative;
-      margin-left: -44px;
-      height: 44px;
-      width: 44px;
+      margin-left: -4.4rem;
+      height: 4.4rem;
+      width: 4.4rem;
       background-color: rgba(0, 0, 0, 0);
    }
 }
