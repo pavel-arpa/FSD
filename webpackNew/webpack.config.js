@@ -65,7 +65,8 @@ module.exports = {
       colorsAndType: ['@babel/polyfill', './colors-and-type.js'],
       formElements: ['@babel/polyfill', './form-elements.js'],
       cards: ['@babel/polyfill', './cards.js'],
-      headersAndFooters: ['@babel/polyfill', './headers-and-footers.js']
+      headersAndFooters: ['@babel/polyfill', './headers-and-footers.js'],
+      landingPage: ['@babel/polyfill', './landing-page.js']
    },
    output: {
       filename: filename('js'),
@@ -108,6 +109,11 @@ module.exports = {
          filename: 'headers-and-footers.html',
          template: './pug/pages/uikit/headers-and-footers.pug',
          chunks: ['headersAndFooters']
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'landing-page.html',
+         template: './pug/pages/uikit/landing-page.pug',
+         chunks: ['landingPage']
       }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
