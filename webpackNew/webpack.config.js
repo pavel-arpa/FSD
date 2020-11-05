@@ -129,7 +129,11 @@ module.exports = {
             {
               from: path.resolve(__dirname, './src/pug/includes/components/room-card/images'),
               to: path.resolve(__dirname, 'dist/rooms-images')
-           }
+            },
+            {
+               from: path.resolve(__dirname, './src/assets/img-for-page-bg'),
+               to: path.resolve(__dirname, 'dist/img-for-page-bg')
+            },
          ]
       }),
       new MiniCssExtractPlugin({
