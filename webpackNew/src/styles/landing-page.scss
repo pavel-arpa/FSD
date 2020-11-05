@@ -2,9 +2,62 @@
 @import "./common.scss";
 
 // Импорты стилей компонентов
-// @import "../pug/includes/components/header/header.scss";
-// @import "../pug/includes/components/button/button.scss";
-// @import "../pug/includes/components/logo-and-toxin/logo-and-toxin.scss";
-// @import "../pug/includes/components/footer/footer.scss";
-// @import "../pug/includes/components/subscription-text-field/subscription-text-field.scss";
-// @import "../pug/includes/components/footer-creative/footer-creative.scss";
+@import "../pug/includes/components/header/header.scss";
+@import "../pug/includes/components/button/button.scss";
+@import "../pug/includes/components/logo-and-toxin/logo-and-toxin.scss";
+@import "../pug/includes/components/footer/footer.scss";
+@import "../pug/includes/components/subscription-text-field/subscription-text-field.scss";
+@import "../pug/includes/components/dropdown/dropdown.scss";
+@import "../pug/includes/components/date-dropdown/date-dropdown.scss";
+@import "../pug/includes/components/find-form/find-form.scss";
+
+// Медиа-запросы
+@media screen and (min-width: 720px) and (max-width: 1240px) {
+  .landing-page__find-form-wrapper {
+    margin-left: 2rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  .landing-page__find-form-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 380px) {
+  .landing-page__find-form-wrapper {
+    // display: grid;
+    // grid-template-columns: minmax(36rem, 38rem);
+    width: 100%;
+  }
+}
+
+
+
+
+// Локальные стили
+.landing-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &__inner {
+    height: 83rem;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+  }
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 140px;
+  }
+  &__find-form-wrapper {
+    width: 120rem;
+    height: 100%;
+  }
+}
