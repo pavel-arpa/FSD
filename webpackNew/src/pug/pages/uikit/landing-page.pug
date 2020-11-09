@@ -7,7 +7,7 @@ html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
+    title Toxin
   body
     .landing-page
       +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"]})
@@ -16,4 +16,6 @@ html(lang="ru")
         .landing-page__content
           .landing-page__find-form-wrapper
             +find-form({title: "Найдём номера под ваши пожелания"})
+          .landing-page__text
+            p= "Лучшие номера для вашей работы, отдыха и просто вдохновения"
       +footer({})
