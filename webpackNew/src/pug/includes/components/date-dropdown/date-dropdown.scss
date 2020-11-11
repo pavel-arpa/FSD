@@ -1,8 +1,20 @@
 .date-dropdown {
    display: flex;
    flex-direction: row;
-   width: 32rem;
+   max-width: 320px;
+   width: 100%;
    justify-content: space-between;
+   &__main {
+      display: flex;
+      height: 100%;
+   }
+   &__wrapper {
+      display: flex;
+      width: 266px;
+      height: 44px;
+      box-sizing: border-box;
+      margin-top: 6px;
+   }
    &__label {
       @extend %font-h3;
    }
@@ -15,15 +27,20 @@
       box-sizing: border-box;
       border-radius: 4px;
       padding: 13px 15px;
-      margin-top: 0.6rem;
       &_single {
-         width: 26rem;
+         width: 100%;
       }
    }
    &__arrow {
-      width: 4.4rem;
-      margin-left: -4.7rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      margin-left: -44px;
       cursor: pointer;
+      z-index: 7;
    }
 }
 
@@ -31,6 +48,7 @@
 // Стили для календаря (самого плагина)
 .datepicker {
    width: 31.9rem;
+   z-index: 40;
 }
 .datepicker- {
    &-nav {
