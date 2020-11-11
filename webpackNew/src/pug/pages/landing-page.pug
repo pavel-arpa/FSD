@@ -1,6 +1,6 @@
-include ../../includes/components/header/header.pug
-include ../../includes/components/footer/footer.pug
-include ../../includes/components/find-form/find-form.pug
+include ../includes/components/header/header.pug
+include ../includes/components/footer/footer.pug
+include ../includes/components/find-form/find-form.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -10,7 +10,7 @@ html(lang="ru")
     title Toxin
   body
     .landing-page
-      +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"]})
+      +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"], fixed: true})
       main.landing-page__inner
         img(src="./img-for-page-bg/landing-page.png" alt=`Одна из наших спален`).landing-page__img
         .landing-page__content

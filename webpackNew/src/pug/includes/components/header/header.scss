@@ -1,5 +1,9 @@
 @media screen and (max-width: 767px) {
   .header {
+    height: 5rem !important;
+    &__inner {
+      height: 5rem !important;
+    }
     &__item {
       display: none;
     }
@@ -7,20 +11,31 @@
       display: flex;
     }
     &__form {
-      &:nth-last-child(2) {
-        display: flex;
+      &:nth-last-child(4) {
+        display: none;
       }
-      &:nth-last-child(1) {
+      &:nth-last-child(3) {
         display: none;
       }
     }
     &__hr {
       display: none;
     }
+
+    // Меню 
+    &__icon-menu {
+      display: flex !important;
+    }
+    &__menu {
+      display: flex !important;
+    }
+    &__menu-button > .header__form {
+      display: flex
+    }
   }
 }
 @media screen and (min-width: 767px) and (max-width: 991px) {
-  .header__form:nth-last-child(1) {
+  .header__form:nth-last-child(3) {
     display: none;
   }
 }
@@ -35,13 +50,14 @@
   background: #FFFFFF;
   box-shadow: 0px 10px 20px $dh5;
   &_fixed {
+    z-index: 50;
     position: fixed;
     top: 0rem;
   }
   &__inner {
     height: 7rem;
-    width: 120rem;
-    margin: auto 2rem auto 2rem;
+    width: 1200px;
+    margin: auto 20px auto 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,7 +67,7 @@
     align-items: center;
   }
   &__toxin {
-    margin-left: 1.2rem;
+    margin-left: 12px;
   }
   &__items {
     display: flex;
@@ -61,7 +77,7 @@
     @extend %font-body;
     color: $dh50;
     cursor: pointer;
-    margin-left: 2rem;
+    margin-left: 20px;
     &_bold {
       color: $dh75;
       font-weight: bold;
@@ -71,10 +87,112 @@
     color: $dh50;
   }
   &__hr {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
     width: 1px;
     background-color: $dh25;
-    margin: 0 0 0 2rem;
+    margin: 0 0 0 20px;
+  }
+  // Меню
+  // Стили иконок
+  &__icon-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  &__line-menu {
+    position: relative;
+    width: 30px;
+    height: 2px;
+    background-color: $dh25;
+  }
+  &__icon-close {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  &__line-close {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: $dh25;
+    &_left {
+      transform: rotate(45deg);
+      margin: 0 auto;
+    }
+    &_right {
+      transform: rotate(-45deg);
+      margin: 0 auto;
+    }
+  }
+
+  // Стили выезжающего меню
+  &__menu {
+    display: block;
+    z-index: 60;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 100%;
+    transition: background-color 0.7s ease;
+  }
+  &__menu-bg {
+    height: 100%;
+    width: 300px;
+    background-color: #fff;
+    margin: 0 -400px 0 auto;
+    transition: margin 0.5s ease;
+  }
+  &__menu-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__close {
+    @extend %font-h3;
+    color: $dh25;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  &__menu-item {
+    @extend %font-body;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    border-top: 1px solid $dh5;
+    &_last {
+      border-bottom: 1px solid $dh5;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+  &__menu-button {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__menu-button .header__item {
+    margin-top: 10px;
   }
 }
+

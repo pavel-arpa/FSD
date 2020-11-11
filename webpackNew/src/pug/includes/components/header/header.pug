@@ -10,20 +10,19 @@ include ../logo-and-toxin/logo-and-toxin.pug
 mixin header(arg)
   if arg.fixed
     header.header.header_fixed
-      block content
-        .header__inner
-          .header__div-logo
-            +logo-and-toxin({})
-          .header__items
-            - if (arg.selected == 1) {
-              a(href=arg.hrefs[0]).header__item.header__item_bold= "О нас"
-            - } else {
-              a(href=arg.hrefs[0]).header__item= "О нас"
-            - }
-            .header__item
-              a(href=arg.hrefs[1]).header__inner-item= "Услуги"
-              svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg").header__arrow-down
-                <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5"/>
+      .header__inner
+        .header__div-logo
+          +logo-and-toxin({})
+        .header__items
+          - if (arg.selected == 1) {
+            a(href=arg.hrefs[0]).header__item.header__item_bold= "О нас"
+          - } else {
+            a(href=arg.hrefs[0]).header__item= "О нас"
+          - }
+          .header__item
+            a(href=arg.hrefs[1]).header__inner-item= "Услуги"
+            svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg").header__arrow-down
+              <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5"/>
           - if (arg.selected == 2) {
             a(href=arg.hrefs[2]).header__item.header__item_bold= "Вакансии"
           - } else {
@@ -34,19 +33,46 @@ mixin header(arg)
           - } else {
             a(href=arg.hrefs[3]).header__item= "Новости"
           - }
-            .header__item
-              a(href=arg.hrefs[4]).header__inner-item= "Соглашения"
-              svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg").header__arrow-down
-                <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5"/>
-            - if (!arg.login) {
-              form(action=arg.hrefs[5]).header__item.header__form
-                +button({text: "Войти", type: "bordered"})
-              form(action=arg.hrefs[6]).header__item.header__form
-                +button({text: "Зарегестрироватся"})
-            - } else {
-              hr.header__hr
-              a(href=arg.login).header__item= "Юлий Цезарь"
-            - }
+          .header__item
+            a(href=arg.hrefs[4]).header__inner-item= "Соглашения"
+            svg(width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg").header__arrow-down
+              <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5"/>
+          - if (!arg.login) {
+            form(action=arg.hrefs[5]).header__item.header__form
+              +button({text: "Войти", type: "bordered"})
+            form(action=arg.hrefs[6]).header__item.header__form
+              +button({text: "Зарегестрироватся"})
+          - } else {
+            hr.header__hr
+            a(href=arg.login).header__item= "Юлий Цезарь"
+          - }
+          .header__icon-menu
+            .header__line-menu
+            .header__line-menu
+            .header__line-menu
+          .header__menu
+            .header__menu-bg
+              .header__menu-content
+                .header__close
+                  .header__text-close="Закрыть"
+                  .header__icon-close
+                    .header__line-close.header__line-close_left
+                    .header__line-close.header__line-close_right
+                a(href="#").header__menu-item="О нас"
+                a(href="#").header__menu-item="Услуги"
+                a(href="#").header__menu-item="Вакансии"
+                a(href="#").header__menu-item="Новости"
+                a(href="#").header__menu-item.header__menu-item_last="Соглашения"
+                - if (!arg.login) {
+                  .header__menu-button
+                    form(action=arg.hrefs[6]).header__item.header__form
+                      +button({text: "Зарегестрироватся"})
+                    form(action=arg.hrefs[5]).header__item.header__form
+                      +button({text: "Войти", type: "bordered"})
+                - }
+                
+
+
 
   else
     header.header

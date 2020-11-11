@@ -12,7 +12,7 @@
 @import "../pug/includes/components/find-form/find-form.scss";
 
 // Медиа-запросы
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 767px) {
   .landing-page__content {
     display: flex;
     justify-content: space-around;
@@ -37,9 +37,9 @@
     justify-content: space-around;
   }
   &__img {
+    z-index: -1;
     width: 100%;
-    height: 100%;
-    max-height: 830px;
+    height: 830px;
     object-fit: cover;
     user-select: none;
     position: absolute;
