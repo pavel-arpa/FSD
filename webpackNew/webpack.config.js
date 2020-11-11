@@ -66,7 +66,8 @@ module.exports = {
       formElements: ['@babel/polyfill', './form-elements.js'],
       cards: ['@babel/polyfill', './cards.js'],
       headersAndFooters: ['@babel/polyfill', './headers-and-footers.js'],
-      landingPage: ['@babel/polyfill', './landing-page.js']
+      landingPage: ['@babel/polyfill', './landing-page.js'],
+      filterPage: ['@babel/polyfill', './filter-page.js']
    },
    output: {
       filename: filename('js'),
@@ -111,9 +112,14 @@ module.exports = {
          chunks: ['headersAndFooters']
       }),
       new HtmlWebpackPlugin({
-         filename: 'landing-page.html',
-         template: './pug/pages/uikit/landing-page.pug',
+         filename: 'landing-page/landing-page.html',
+         template: './pug/pages/landing-page.pug',
          chunks: ['landingPage']
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'filter-page/filter-page.html',
+         template: './pug/pages/filter-page.pug',
+         ckunks: ['filterPage']
       }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({

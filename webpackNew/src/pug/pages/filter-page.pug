@@ -1,0 +1,14 @@
+include ../includes/components/header/header.pug
+include ../includes/components/footer/footer.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Filter Page
+  body
+    .filter-page
+      +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"], fixed: true})
+      main.filter-page__main
+      +footer({})
