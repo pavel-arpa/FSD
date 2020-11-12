@@ -1,9 +1,13 @@
-.form-elements-wrapper__inputs-wrapper {
+
+.form-elements-wrapper {
+   &__inputs-wrapper {
    display: flex;
    flex-direction: column;
-   margin-top: 50px;
-   margin-left: 50px;
-   height: 1500px;
+   padding-top: 50px;
+   padding-left: 50px;
+   height: 100%;
+   background-color: #fff;
+   }
 }
 .like-button-wrapper {
    display: flex;
