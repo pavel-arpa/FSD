@@ -62,12 +62,12 @@ module.exports = {
    mode: 'development',
    entry: {
       main: ['@babel/polyfill', './index.js'],
-      colorsAndType: ['@babel/polyfill', './colors-and-type.js'],
-      formElements: ['@babel/polyfill', './form-elements.js'],
-      cards: ['@babel/polyfill', './cards.js'],
-      headersAndFooters: ['@babel/polyfill', './headers-and-footers.js'],
-      landingPage: ['@babel/polyfill', './landing-page.js'],
-      filterPage: ['@babel/polyfill', './filter-page.js']
+      // colorsAndType: ['@babel/polyfill', './colors-and-type.js'],
+      // formElements: ['@babel/polyfill', './form-elements.js'],
+      // cards: ['@babel/polyfill', './cards.js'],
+      // headersAndFooters: ['@babel/polyfill', './headers-and-footers.js'],
+      // filterPage: ['@babel/polyfill', './filter-page.js'],
+      // landingWebPage: ['@babel/polyfill', './landing-page.js'],
    },
    output: {
       filename: filename('js'),
@@ -80,7 +80,7 @@ module.exports = {
          '@': path.resolve(__dirname, 'src'),
       },
    },
-   optimization: optimization(),
+   // optimization: optimization(),
    devServer: {
       port: 4200,
       hot: isDev
@@ -89,37 +89,37 @@ module.exports = {
       new HtmlWebpackPlugin({
          filename: 'index.html',
          template: './pug/pages/index.pug',
-         ckunks: ['main']
+         // ckunks: ['main']
       }),
       new HtmlWebpackPlugin({
          filename: 'colors-and-type.html',
          template: './pug/pages/uikit/colors-and-type.pug',
-         chunks: ['colorsAndType']
+         // chunks: ['colorsAndType']
       }),
       new HtmlWebpackPlugin({
          filename: 'form-elements.html',
          template: './pug/pages/uikit/form-elements.pug',
-         chunks: ['formElements']
+         // chunks: ['formElements']
       }),
       new HtmlWebpackPlugin({
          filename: 'cards.html',
          template: './pug/pages/uikit/cards.pug',
-         chunks: ['cards']
+         // chunks: ['cards']
       }),
       new HtmlWebpackPlugin({
          filename: 'headers-and-footers.html',
          template: './pug/pages/uikit/headers-and-footers.pug',
-         chunks: ['headersAndFooters']
+         // chunks: ['headersAndFooters']
       }),
       new HtmlWebpackPlugin({
-         filename: 'landing-page/landing-page.html',
-         template: './pug/pages/landing-page.pug',
-         chunks: ['landingPage']
-      }),
-      new HtmlWebpackPlugin({
-         filename: 'filter-page/filter-page.html',
+         filename: 'filter-page.html',
          template: './pug/pages/filter-page.pug',
-         ckunks: ['filterPage']
+         // ckunks: ['filterPage']
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'landing-page.html',
+         template: './pug/pages/landing-page.pug',
+         // chunks: ['landingWebPage']
       }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
@@ -193,18 +193,19 @@ module.exports = {
          },
          {
             test: /\.(png|jpg|svg|gif)$/,
-            use: ['file-loader'],
-            // options: {
-            //    name: '[name].[ext]',
-            //    outputPath: 'static/images/',
-            // },
+            loader: 'file-loader',
+            options: {
+               name: '[name].[ext]',
+               outputPath: 'static/fonts-and-img/',
+            },
          },
          {
             test: /\.(ttf|woff|woff2|eot)$/,
-            use: ['file-loader'],
-            // options: {
-            //    outputPath: 'fonts/',
-            // },
+            loader: 'file-loader',
+            options: {
+               name: '[name].[ext]',
+               outputPath: 'static/fonts-and-img/',
+            },
          },
          { 
             test: /\.js$/, 

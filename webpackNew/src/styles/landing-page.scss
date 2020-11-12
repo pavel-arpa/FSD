@@ -11,6 +11,7 @@
 @import "../pug/includes/components/date-dropdown/date-dropdown.scss";
 @import "../pug/includes/components/find-form/find-form.scss";
 
+
 // Медиа-запросы
 @media screen and (max-width: 767px) {
   .landing-page__content {
@@ -31,8 +32,11 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   &__inner {
-    height: 83rem;
+    flex-grow: 1;
     display: flex;
     justify-content: space-around;
   }
