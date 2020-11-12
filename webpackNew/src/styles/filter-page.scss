@@ -1,0 +1,42 @@
+// Общие стили
+@import "./common.scss";
+
+// Импорты стилей компонентов
+@import "../pug/includes/components/header/header.scss";
+@import "../pug/includes/components/button/button.scss";
+@import "../pug/includes/components/logo-and-toxin/logo-and-toxin.scss";
+@import "../pug/includes/components/footer/footer.scss";
+@import "../pug/includes/components/subscription-text-field/subscription-text-field.scss";
+@import "../pug/includes/components/dropdown/dropdown.scss";
+@import "../pug/includes/components/date-dropdown/date-dropdown.scss";
+@import "../pug/includes/components/range-slider/range-slider.scss";
+@import "../pug/includes/components/checkbox-list/checkbox-list.scss";
+
+
+
+.filter-page {
+  padding-top: 100px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-grow: 1;
+    border-bottom: 1px solid $dh25;
+  }
+  &__content {
+    width: 1200px;
+    margin: 0 20px;
+    padding-bottom: 70px;
+  }
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    width: 266px;
+  }
+}

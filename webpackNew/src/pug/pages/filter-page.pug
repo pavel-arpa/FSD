@@ -1,5 +1,11 @@
 include ../includes/components/header/header.pug
 include ../includes/components/footer/footer.pug
+include ../includes/components/date-dropdown/date-dropdown.pug
+include ../includes/components/dropdown/dropdown.pug
+include ../includes/components/range-slider/range-slider.pug
+include ../includes/components/checkbox-list/checkbox-list.pug
+//- include
+//- include
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -11,4 +17,14 @@ html(lang="ru")
     .filter-page
       +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"], fixed: true})
       main.filter-page__main
+        .filter-page__content
+          .filter-page__aside
+            +date-dropdown({type: "standart"})
+            +dropdown({title: "Гости", text: "Сколько гостей", type: "people"})
+            +range-slider({title: "Диапазон цены", annotation: "Стоимость за сутки пребывания в номере"})
+            +checkbox-list({title: "Правила дома", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], type: "buttons"})
+            +checkbox-list({type: "rich", title: "Доступность", items: ["Широкий коридор", "Помошник для инвалидов"], subtitles: ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист и проводит до номера."]})
+            +dropdown({title: "Удобства номера", type: "accommodation"})
+            +checkbox-list({type: "expandable", title: "Дополнительные удобства", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], checked: [2, 3, 4], expanded: true})
+            
       +footer({})
