@@ -9,12 +9,58 @@ $('.dropdown__btn').click(function(){
 // Цикл уникальности для каждого нового одинакового блока
 let len = document.querySelectorAll('.dropdown').length
 let arrayOfDropdowns = document.querySelectorAll('.dropdown')
+let objectsPeople = []
+class People {
+   constructor() {
+      this.adult = 0
+      this.child = 0
+      this.count = 0
+      this.baby = 0
+   }
+   countStr() {
+      if (this.count == 0) {
+         return 'Сколько гостей'
+      }
+      if (this.count == 1) { 
+         return `${this.count} гость` 
+      }
+      if ((this.count > 1) && (this.count< 5)) { 
+         return `${this.count} гостя` 
+      }
+      if (this.count > 4) { 
+         return `${this.count} гостей` 
+      }
+      if ((this.count == 0) && (this.count > 1)) { 
+         return `${this.count} гостей` 
+      }
+   }
+   // baby: 0,
+   babyStr() {
+      if (this.baby == 0) {
+         return ''
+      }
+      if (this.baby == 1) {
+         return `, ${this.baby} младенец`
+      }
+      if ((this.baby >= 2) && (this.baby <= 4)) {
+         return `, ${this.baby} младенца`
+      }
+      if (this.baby >= 5) {
+         return `, ${this.baby} младенцев`
+      }
+   }
+}
+
+
+
 for (let x=0; x<len; x++) {
    let identif = Math.floor(Math.random() * 10000000)
    arrayOfDropdowns[x].id = identif
    let dropdownBtn = arrayOfDropdowns[x].querySelector('.dropdown__btn')
+   objectsPeople[x] = new People()
+
    if ($(dropdownBtn).hasClass('dropdown__btn_big')) {
-      dropdownPeople(identif)
+      dropdownPeople(identif, x)
    } else {
       dropdownAccom(identif)
    }
@@ -24,49 +70,11 @@ for (let x=0; x<len; x++) {
 
 // Главная функция со всей логикой
 
-function dropdownPeople(id) {
-   
+function dropdownPeople(id, x) {
    let elemById = document.getElementById(id)
    let btnTitle = elemById.querySelector('.dropdown__btn-title')
    let circle = elemById.querySelectorAll('.dropdown__circle')
    let numberOfPeople = elemById.querySelectorAll('.dropdown__number-of-people')
-   people = {
-      adult: 0,
-      child: 0,
-      count: 0,
-      countStr() {
-         if (this.count == 0) {
-            return 'Сколько гостей'
-         }
-         if (this.count == 1) { 
-            return `${this.count} гость` 
-         }
-         if ((this.count > 1) && (this.count< 5)) { 
-            return `${this.count} гостя` 
-         }
-         if (this.count > 4) { 
-            return `${this.count} гостей` 
-         }
-         if ((this.count == 0) && (this.count > 1)) { 
-            return `${this.count} гостей` 
-         }
-      },
-      baby: 0,
-      babyStr() {
-         if (this.baby == 0) {
-            return ''
-         }
-         if (this.baby == 1) {
-            return `, ${this.baby} младенец`
-         }
-         if ((this.baby >= 2) && (this.baby <= 4)) {
-            return `, ${this.baby} младенца`
-         }
-         if (this.baby >= 5) {
-            return `, ${this.baby} младенцев`
-         }
-      }
-   }
 
    for (let i=0; i<5; i=i+2) {
       // Увеличение количества гостей
@@ -74,66 +82,66 @@ function dropdownPeople(id) {
          "click",
          function() {
             switch(i) {
-               case 0: numberOfPeople[0].innerHTML = ++people.adult
+               case 0: numberOfPeople[0].innerHTML = ++objectsPeople[x].adult
                   break
-               case 2: numberOfPeople[1].innerHTML = ++people.child
+               case 2: numberOfPeople[1].innerHTML = ++objectsPeople[x].child
                   break
             }
-            if (people.adult == 1) { circle[0].classList.remove('dropdown__circle_unavailable') }
-            if (people.child == 1) { circle[2].classList.remove('dropdown__circle_unavailable') }
+            if (objectsPeople[x].adult == 1) { circle[0].classList.remove('dropdown__circle_unavailable') }
+            if (objectsPeople[x].child == 1) { circle[2].classList.remove('dropdown__circle_unavailable') }
             
-            people.count = people.adult + people.child
-            if (people.count > 0) { 
+            objectsPeople[x].count = objectsPeople[x].adult + objectsPeople[x].child
+            if (objectsPeople[x].count > 0) { 
                elemById.querySelector('.dropdown__btn-clear').classList.add('dropdown__btn-clear_visible') 
-               if (i == 4) { numberOfPeople[2].innerHTML = ++people.baby }
+               if (i == 4) { numberOfPeople[2].innerHTML = ++objectsPeople[x].baby }
                circle[5].classList.remove('dropdown__circle_unavailable')
-               if (people.baby == 1) { circle[4].classList.remove('dropdown__circle_unavailable') }
+               if (objectsPeople[x].baby == 1) { circle[4].classList.remove('dropdown__circle_unavailable') }
             }
-            btnTitle.innerHTML = `${people.countStr()}${people.babyStr()}`
+            btnTitle.innerHTML = `${objectsPeople[x].countStr()}${objectsPeople[x].babyStr()}`
       })
       // Уменьшение количества гостей
       circle[i].addEventListener(
          'click', 
          function() { 
-            if (people.count >= 0) {
+            if (objectsPeople[x].count >= 0) {
                switch(i) {
-                  case 0: (people.adult > 0 ? numberOfPeople[0].innerHTML = --people.adult : true)
+                  case 0: (objectsPeople[x].adult > 0 ? numberOfPeople[0].innerHTML = --objectsPeople[x].adult : true)
                      break
-                  case 2: (people.child > 0 ? numberOfPeople[1].innerHTML = --people.child : true)
+                  case 2: (objectsPeople[x].child > 0 ? numberOfPeople[1].innerHTML = --objectsPeople[x].child : true)
                      break
-                  case 4: (people.baby > 0 ? numberOfPeople[2].innerHTML = --people.baby : true)
+                  case 4: (objectsPeople[x].baby > 0 ? numberOfPeople[2].innerHTML = --objectsPeople[x].baby : true)
                      break
                }
-               if (people.adult == 0) { circle[0].classList.add('dropdown__circle_unavailable') }
-               if (people.child == 0) { circle[2].classList.add('dropdown__circle_unavailable') }
-               if (people.baby == 0) { circle[4].classList.add('dropdown__circle_unavailable') }
+               if (objectsPeople[x].adult == 0) { circle[0].classList.add('dropdown__circle_unavailable') }
+               if (objectsPeople[x].child == 0) { circle[2].classList.add('dropdown__circle_unavailable') }
+               if (objectsPeople[x].baby == 0) { circle[4].classList.add('dropdown__circle_unavailable') }
 
-               people.count = people.adult + people.child
-               if (people.count == 0) { 
-                  btnTitle.innerHTML = people.countStr()
+               objectsPeople[x].count = objectsPeople[x].adult + objectsPeople[x].child
+               if (objectsPeople[x].count == 0) { 
+                  btnTitle.innerHTML = objectsPeople[x].countStr()
                   elemById.querySelector('.dropdown__btn-clear').classList.remove('dropdown__btn-clear_visible')
-                  people.baby = 0
-                  numberOfPeople[2].innerHTML = people.baby
+                  objectsPeople[x].baby = 0
+                  numberOfPeople[2].innerHTML = objectsPeople[x].baby
                   circle[4].classList.add('dropdown__circle_unavailable')
                   circle[5].classList.add('dropdown__circle_unavailable')
                }
-               btnTitle.innerHTML = `${people.countStr()}${people.babyStr()}`
+               btnTitle.innerHTML = `${objectsPeople[x].countStr()}${objectsPeople[x].babyStr()}`
             }
       })
       // Обнуление при нажатии кнопки очистить
       elemById.querySelector('.dropdown__btn-clear').addEventListener(
          'click',
          function() {
-            people.count=0
+            objectsPeople[x].count=0
             btnTitle.innerHTML = 'Сколько гостей'
-            people.adult=0
-            numberOfPeople[0].innerHTML = people.adult
+            objectsPeople[x].adult=0
+            numberOfPeople[0].innerHTML = objectsPeople[x].adult
             circle[0].classList.add('dropdown__circle_unavailable')
-            people.child=0
-            numberOfPeople[1].innerHTML = people.child
+            objectsPeople[x].child=0
+            numberOfPeople[1].innerHTML = objectsPeople[x].child
             circle[2].classList.add('dropdown__circle_unavailable')
-            people.baby=0
-            numberOfPeople[2].innerHTML = people.baby
+            objectsPeople[x].baby=0
+            numberOfPeople[2].innerHTML = objectsPeople[x].baby
             circle[4].classList.add('dropdown__circle_unavailable')
             circle[5].classList.add('dropdown__circle_unavailable')
 
