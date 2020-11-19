@@ -32,14 +32,15 @@ mixin room-card(arg)
           .room-card__one-point
         - }
 
-    .room-card__inner
-      .room-card__info
-        h1.room-card__number= arg.number
-        p.room-card__number-class= arg.class
-        p.room-card__price= arg.price
-        span.room-card__price-per= "в сутки"
-      hr.room-card__line
-      .room-card__wrapper-rating
-        +rate-button({rating: arg.rating})        
-        p.room-card__count-reviews= arg.reviews
+    form(action="#").room-card__inner
+      button.room-card__main-button
+        .room-card__info
+          h1.room-card__number= arg.number
+          p.room-card__number-class= arg.class
+          p.room-card__price= arg.price
+          span.room-card__price-per= "в сутки"
+        hr.room-card__line
+        .room-card__wrapper-rating
+          +rate-button({rating: arg.rating})        
+          p.room-card__count-reviews= arg.reviews
 
