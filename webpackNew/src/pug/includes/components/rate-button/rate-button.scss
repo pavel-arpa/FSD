@@ -1,10 +1,12 @@
 .rate-button {
-   display: flex;
+   display: inline-flex;
    flex-direction: row;
    justify-content: space-between;
-   height: 2.4rem;
-   width: 12rem;
+   align-items: center;
+   width: 60%;
+   max-width: 12rem;
    &__star {
+      display: inline-flex;
       margin: .2rem;
    }
 }
