@@ -9,7 +9,7 @@ if (document.querySelector('.header')) {
     menu.style.left = '0px'
     menu.style.backgroundColor = 'rgba(0, 0, 0, 0.3)'
     menuBg.style.margin = '0 0 0 auto'
-    page.style.overflow = 'hidden'
+    document.documentElement.style.overflow = 'hidden'
   })
 
   close.addEventListener('click', function() {
