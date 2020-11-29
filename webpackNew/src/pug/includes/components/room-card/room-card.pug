@@ -9,6 +9,7 @@ include ../rate-button/rate-button.pug
 //-   class:
 //- }
 
+//- .room-card__wrapper
 mixin room-card(arg)
   .room-card
     .room-card__image-window
@@ -32,8 +33,8 @@ mixin room-card(arg)
           .room-card__one-point
         - }
 
-    form(action="#").room-card__inner
-      button.room-card__main-button
+    .room-card__inner
+      .room-card__main-button
         .room-card__info
           h1.room-card__number= arg.number
           p.room-card__number-class= arg.class
