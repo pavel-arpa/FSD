@@ -30,7 +30,7 @@
    }
    &__inner-bg-wrapper {
       min-width: 95px;
-      padding: 0.2rem;
+      padding: 2px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -46,7 +46,7 @@
    &__text {
       @extend %font-h3;
       line-height: 44px;
-      margin: auto 1.8rem auto 1.8rem;
+      margin: auto 18px auto 18px;
       color: #fff;
       &_purple-lh40 {
          color: $purple;
