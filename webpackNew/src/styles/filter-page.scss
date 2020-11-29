@@ -11,7 +11,101 @@
 @import "../pug/includes/components/date-dropdown/date-dropdown.scss";
 @import "../pug/includes/components/range-slider/range-slider.scss";
 @import "../pug/includes/components/checkbox-list/checkbox-list.scss";
+@import "../pug/includes/components/pagination/pagination.scss";
 
+
+
+@media screen and (max-width: 480px) {
+  .filter-page {
+    & .filter-page__title {
+    font-size: 2rem;
+    }
+    & .room-card__inner {
+      font-size: 0.6rem;
+    }
+    & .pagination * {
+      font-size: 1rem;
+    }
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .filter-page {
+    & .room-card__inner {
+      font-size: 0.8rem;
+    }
+    & .pagination * {
+      font-size: 1rem;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  div.filter-page {
+    &__button-aside {
+      display: flex;
+      top: 50px !important;
+    }
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 900px) {
+  div.filter-page {
+    padding-top: 14rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  div.filter-page {
+    &__button-aside {
+      display: flex;
+      top: 70px;
+    }
+    &__aside {
+      width: 100%;
+      position: fixed;
+      top: -964px;
+      z-index: 30;
+      align-items: center;
+      background-color: #fff;
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+    &__aside-inner {
+      display: flex;
+      flex-direction: column;
+      width: 340px;
+      height: 100%;
+    }
+    &__content {
+      justify-content: center;
+    }
+    &__rooms {
+      justify-content: center;
+    }
+  }
+  h1.filter-page__title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1157px) {
+  div.filter-page {
+    &__rooms > div {
+      // min-height: 27rem;
+      flex-basis: 49%;
+      margin-right: 0px;
+      margin-right: 2%;
+      &:nth-child(2n) {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1157px) {
+  div.filter-page {
+    &__rooms > div {
+      &:nth-child(3n) {
+        margin-right: 0px;
+      }
+    }
+  }
+}
 
 
 .filter-page {
@@ -30,13 +124,63 @@
     border-bottom: 1px solid $dh25;
   }
   &__content {
+    display: flex;
+    justify-content: space-between;
     width: 1200px;
     margin: 0 20px;
-    padding-bottom: 70px;
   }
   &__aside {
     display: flex;
     flex-direction: column;
     width: 266px;
+    margin-right: 30px;
+  }
+  &__aside-inner {
+    & > div {
+      margin-bottom: 30px;
+    }
+  }
+  &__results {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__title {
+    @extend %font-h1;
+    margin: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  &__rooms {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    & > div {
+      flex-basis: 32.333%;
+      margin-bottom: 2%;
+      margin-right: 1.5%;
+    }
+  }
+  &__pagination-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+  &__button-aside {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    z-index: 40;
+    justify-content: space-around;
+    align-items: center;
+    transition: background-color ease 0.3s;
   }
 }
