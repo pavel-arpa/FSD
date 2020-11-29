@@ -33,6 +33,9 @@
       }
    }
    &__submit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       margin-left: -4.4rem;
       height: 4.4rem;
