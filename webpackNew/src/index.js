@@ -36,4 +36,5 @@ import './pug/includes/components/header/header.js'
 // ---- формы
 import './pug/includes/components/calc-form/calc-form.js'
 import './pug/includes/components/room-card/room-card.js'
-
+// ---- страницы
+import './pug/pages/filter-page.js'
