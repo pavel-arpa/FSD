@@ -1,3 +1,11 @@
+// function importAll(resolve) {
+//   resolve.keys().forEach(resolve);
+// }
+
+// importAll(require.context('../src/', true, /\.js$|\.scss$|\.css$/)); 
+
+
+
 // СТИЛИ
 
 // Библиотеки и плагины
@@ -15,6 +23,7 @@ import './styles/cards.scss'
 import './styles/header-and-footers.scss'
 import './styles/landing-page.scss'
 import './styles/filter-page.scss'
+import './styles/reg-login-page.scss'
 
 
 
@@ -38,3 +47,4 @@ import './pug/includes/components/calc-form/calc-form.js'
 import './pug/includes/components/room-card/room-card.js'
 // ---- страницы
 import './pug/pages/filter-page.js'
+import './pug/pages/reg-signin-page.js'
