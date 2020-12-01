@@ -1,4 +1,48 @@
+// Общие стили
 @import "./common.scss";
+
+// Логотипы
+@import "../pug/includes/components/global/logo/logo.scss";
+
+// Импорты стилей компонентов
+@import "../pug/includes/components/bullet-list/bullet-list.scss";
+@import "../pug/includes/components/button/button.scss";
+@import "../pug/includes/components/calc-form/calc-form.scss";
+@import "../pug/includes/components/checkbox-list/checkbox-list.scss";
+@import "../pug/includes/components/color-label/color-label.scss";
+@import "../pug/includes/components/date-dropdown/date-dropdown.scss";
+@import "../pug/includes/components/dropdown/dropdown.scss";
+@import "../pug/includes/components/feedback/feedback.scss";
+@import "../pug/includes/components/find-form/find-form.scss";
+@import "../pug/includes/components/footer/footer.scss";
+@import "../pug/includes/components/footer-creative/footer-creative.scss";
+@import "../pug/includes/components/header/header.scss";
+@import "../pug/includes/components/icon-text-list/icon-text-list.scss";
+@import "../pug/includes/components/like-button/like-button.scss";
+@import "../pug/includes/components/logo-and-toxin/logo-and-toxin.scss";
+@import "../pug/includes/components/pagination/pagination.scss";
+@import "../pug/includes/components/radio-buttons/radio-buttons.scss";
+@import "../pug/includes/components/range-slider/range-slider.scss";
+@import "../pug/includes/components/rate-button/rate-button.scss";
+@import "../pug/includes/components/register-form/register-form.scss";
+@import "../pug/includes/components/room-card/room-card.scss";
+@import "../pug/includes/components/sign-in-form/sign-in-form.scss";
+@import "../pug/includes/components/subscription-text-field/subscription-text-field.scss";
+@import "../pug/includes/components/text-field/text-field.scss";
+@import "../pug/includes/components/toggle/toggle.scss";
+@import "../pug/includes/components/title-set/title-set.scss";
+@import "../pug/pages/uikit/cards/cards-wrapper/cards-wrapper.scss";
+@import "../pug/pages/uikit/colors-and-type/colors-and-type-wrapper/colors-and-type-wrapper.scss";
+@import "../pug/pages/uikit/colors-and-type/colors/colors.scss";
+@import "../pug/pages/uikit/colors-and-type/colors-titles-wrapper/colors-titles-wrapper.scss";
+@import "../pug/pages/uikit/colors-and-type/titles-wrapper/titles-wrapper.scss";
+@import "../pug/pages/uikit/form-elements/form-elements-wrapper/form-elements-wrapper.scss";
+@import "../pug/pages/uikit/headers-and-footers/headers-and-footer-wrapper/headers-and-footers-wrapper.scss";
+@import "./filter-page.scss";
+@import "./landing-page.scss";
+@import "./reg-login-page.scss";
+
+
 
 .index {
   &__wrapper {

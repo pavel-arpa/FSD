@@ -13,17 +13,17 @@ import '../node_modules/air-datepicker/dist/css/datepicker.css'
 
 // Кастомные
 // ---- общие
-import './styles/common.scss'
-import './styles/null.scss'
+// import './styles/common.scss'
+// import './styles/null.scss'
 // ---- страницы
 import './styles/index.scss'
-import './styles/colors-and-type.scss'
-import './styles/form-elements.scss'
-import './styles/cards.scss'
-import './styles/header-and-footers.scss'
-import './styles/landing-page.scss'
-import './styles/filter-page.scss'
-import './styles/reg-login-page.scss'
+// import './styles/colors-and-type.scss'
+// import './styles/form-elements.scss'
+// import './styles/cards.scss'
+// import './styles/header-and-footers.scss'
+// import './styles/landing-page.scss'
+// import './styles/filter-page.scss'
+// import './styles/reg-login-page.scss'
 
 
 
