@@ -3,7 +3,6 @@ if (document.querySelector('.header')) {
   let menu = document.querySelector('.header__menu')
   let menuBg = document.querySelector('.header__menu-bg')
   let close = document.querySelector('.header__close')
-  let page = document.querySelector('.landing-page')
 
   iconMenu.addEventListener('click', function() {
     menu.style.left = '0px'
@@ -18,6 +17,6 @@ if (document.querySelector('.header')) {
       menu.style.left = '100%'
     }, 700)
     menuBg.style.margin = '0 -400px 0 auto'
-    page.style.overflow = 'auto'
+    document.documentElement.style.overflow = 'auto'
   })
 }
