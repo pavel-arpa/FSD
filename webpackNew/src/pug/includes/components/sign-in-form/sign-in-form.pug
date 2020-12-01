@@ -7,14 +7,15 @@ include ../text-field/text-field.pug
 
 mixin sign-in-form(arg)
   .sign-in-form
-    form(method="POST").sign-in-form__form
-      h1.sign-in-form__title= arg.title
+    .sign-in-form__wrapper
+      form(method="POST").sign-in-form__form
+        h1.sign-in-form__title= 'Войти'
 
-      .sign-in-form__wrapper-service-data
-        +text-field({text: "Email"})
-        +text-field({text: "Пароль", type: "password"})
+        .sign-in-form__wrapper-service-data
+          +text-field({text: "Email"})
+          +text-field({text: "Пароль", type: "password"})
 
-      +button({type: "large", text: "Войти"})
+        +button({type: "large", text: "Войти"})
 
       .sign-in-form__wrapper-create-account
         p.sign-in-form__create-account= "Нет аккаунта на Toxin?"
