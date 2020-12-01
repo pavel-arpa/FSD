@@ -121,6 +121,11 @@ module.exports = {
          template: './pug/pages/landing-page.pug',
          // chunks: ['landingWebPage']
       }),
+      new HtmlWebpackPlugin({
+         filename: 'reg-signin-page.html',
+         template: './pug/pages/reg-signin-page.pug',
+         // chunks: ['landingWebPage']
+      }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
          patterns: [

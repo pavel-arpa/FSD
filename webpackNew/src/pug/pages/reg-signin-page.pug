@@ -1,0 +1,23 @@
+include ../includes/components/header/header.pug
+include ../includes/components/footer/footer.pug
+include ../includes/components/register-form/register-form.pug
+include ../includes/components/sign-in-form/sign-in-form.pug
+
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Toxin
+  body
+    .reg-signin-page
+      +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"], fixed: true})
+      main.reg-signin-page__inner
+        img(src="./img-for-page-bg/reg-signin-page.png" alt=`Одна из наших спален`).reg-signin-page__img
+        .reg-signin-page__content
+          .reg-signin-page__register-form-wrapper
+            +register-form({})
+          .reg-signin-page__sign-in-form-wrapper
+            +sign-in-form({})
+      +footer({})
