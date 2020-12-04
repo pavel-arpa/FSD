@@ -1,0 +1,68 @@
+// Медиа запросы
+
+
+
+// Локальные стили
+.room-page {
+  background-color: #fff;
+  height: 100%;
+  width: 100vw;
+  &__main {
+    border-bottom: 1px solid $dh25;
+    margin-top: 70px;
+    min-height: 100vh;
+  }
+  &__images-wrapper {
+    height: 485px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+  }
+  &__sector-img {
+    height: 100%;
+    &_first {
+      width: 66.666%;
+    }
+    &_second {
+      width: 33.333%;
+    }
+  }
+  &__image {
+    object-fit: cover;
+    user-select: none;
+    width: 100%;
+    &_big {
+      height: 100%;
+    }
+    &_small {
+      height: 50%;
+    }
+  }
+  
+  
+  &__content-wrapper {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    margin: 0 20px;
+  }
+  &__content {
+    width: 1200px;
+    padding: 70px 0px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  &__sector-cont {
+    display: flex;
+    &_left {
+      width: 66.666%;
+      justify-content: flex-start;
+    }
+    &_right {
+      width: 33.333%;
+      justify-content: flex-end;
+    }
+  }
+}

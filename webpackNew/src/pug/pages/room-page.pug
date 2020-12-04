@@ -1,0 +1,26 @@
+include ../includes/components/header/header.pug
+include ../includes/components/footer/footer.pug
+include ../includes/components/calc-form/calc-form.pug
+
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Toxin
+  body.room-page
+    +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"], fixed: true})
+    main.room-page__main
+      .room-page__images-wrapper
+        .room-page__sector.room-page__sector-img_first
+          img(src="./rooms-images/888-1.png" alt=`Одна из наших спален`).room-page__image.room-page__image_big
+        .room-page__sector.room-page__sector-img_second
+          img(src="./rooms-images/888-2.png" alt=`Одна из наших спален`).room-page__image.room-page__image_small
+          img(src="./rooms-images/888-3.png" alt=`Одна из наших спален`).room-page__image.room-page__image_small
+      .room-page__content-wrapper
+        .room-page__content
+          .room-page__sector-cont.room-page__sector-cont_left
+          .room-page__sector-cont.room-page__sector-cont_right
+            +calc-form({})
+    +footer({})

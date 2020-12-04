@@ -35,23 +35,23 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
 
 
 // Функция автодобавления кода для cssLoaders 
-const cssLoaders = extra => {
-   const loaders = [
-      {
-         loader: MiniCssExtractPlugin.loader,
-         options: {
-            hmr: isDev,
-            reloadAll: true,
-         },
-      }, 
-      'css-loader'
-   ]
+// const cssLoaders = extra => {
+//    const loaders = [
+//       {
+//          loader: MiniCssExtractPlugin.loader,
+//          options: {
+//             hmr: isDev,
+//             reloadAll: true,
+//          },
+//       }, 
+//       'css-loader'
+//    ]
 
-   if (extra) {
-      loaders.push(extra)
-   }
-   return loaders
-}
+//    if (extra) {
+//       loaders.push(extra)
+//    }
+//    return loaders
+// }
 
 // ---------------------------------- ++++ ----------------------------------
 
@@ -62,12 +62,6 @@ module.exports = {
    mode: 'development',
    entry: {
       main: ['@babel/polyfill', './index.js'],
-      // colorsAndType: ['@babel/polyfill', './colors-and-type.js'],
-      // formElements: ['@babel/polyfill', './form-elements.js'],
-      // cards: ['@babel/polyfill', './cards.js'],
-      // headersAndFooters: ['@babel/polyfill', './headers-and-footers.js'],
-      // filterPage: ['@babel/polyfill', './filter-page.js'],
-      // landingWebPage: ['@babel/polyfill', './landing-page.js'],
    },
    output: {
       filename: filename('js'),
@@ -89,42 +83,38 @@ module.exports = {
       new HtmlWebpackPlugin({
          filename: 'index.html',
          template: './pug/pages/index.pug',
-         // ckunks: ['main']
       }),
       new HtmlWebpackPlugin({
          filename: 'colors-and-type.html',
          template: './pug/pages/uikit/colors-and-type.pug',
-         // chunks: ['colorsAndType']
       }),
       new HtmlWebpackPlugin({
          filename: 'form-elements.html',
          template: './pug/pages/uikit/form-elements.pug',
-         // chunks: ['formElements']
       }),
       new HtmlWebpackPlugin({
          filename: 'cards.html',
          template: './pug/pages/uikit/cards.pug',
-         // chunks: ['cards']
       }),
       new HtmlWebpackPlugin({
          filename: 'headers-and-footers.html',
          template: './pug/pages/uikit/headers-and-footers.pug',
-         // chunks: ['headersAndFooters']
       }),
       new HtmlWebpackPlugin({
          filename: 'filter-page.html',
          template: './pug/pages/filter-page.pug',
-         // ckunks: ['filterPage']
       }),
       new HtmlWebpackPlugin({
          filename: 'landing-page.html',
          template: './pug/pages/landing-page.pug',
-         // chunks: ['landingWebPage']
       }),
       new HtmlWebpackPlugin({
          filename: 'reg-signin-page.html',
          template: './pug/pages/reg-signin-page.pug',
-         // chunks: ['landingWebPage']
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'room-page.html',
+         template: './pug/pages/room-page.pug',
       }),
       new CleanWebpackPlugin(),
       new CopyWebpackPlugin({
@@ -167,10 +157,6 @@ module.exports = {
                pretty: isDev
             }
          },
-         // {
-         //    test: /\.css$/,
-         //    use: cssLoaders()
-         // },
          {
             test: /\.(sass|scss|css)$/,
             use: [
