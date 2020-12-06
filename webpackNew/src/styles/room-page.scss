@@ -18,6 +18,72 @@
     }
   }
 }
+@media screen and (max-width: 767px) {
+  main.room-page {
+    &__main {
+      margin-top: 50px;
+    }
+  }
+  div.room-page {
+    &__sector-cont {
+      &_left {
+        flex-direction: column;
+        & > div:last-child {
+          flex-direction: column;
+          align-items: center;
+          & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            width: 70%;
+          }
+          & h2, span, p {
+            text-align: center;
+          }
+        }
+        & > div:first-child {
+          flex-direction: column;
+          align-items: center;
+          & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            width: 70%;
+          }
+          & h2 {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  div.room-page {
+    &__content {
+      margin: 0 0;
+    }
+    &__sector-cont {
+      &_left {
+        padding: 0 20px;
+      }
+    }
+  }
+  h2.room-page {
+    &__title {
+      &_double:after {
+        content: "2 отзыва";
+        position: absolute;
+        font-size: 10px;
+        margin-top: 20px;
+        left: 20px;
+      }
+    }
+  }
+}
+
 
 
 // Локальные стили
@@ -60,9 +126,9 @@
     display: flex;
     justify-content: space-around;
     height: 100%;
-    margin: 0 20px;
   }
   &__content {
+    margin: 0 20px;
     width: 1200px;
     padding: 70px 0px;
     display: flex;
@@ -113,8 +179,4 @@
     @extend %font-body;
     max-width: 350px;
   }
-  // &__feedback-count {
-  //   @extend %font-body;
-  //   position: absolute;
-  // }
 }
