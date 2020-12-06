@@ -1,3 +1,18 @@
+@media screen and (max-width: 767px) {
+   div.icon-text-list {
+      &__set-wrapper {
+         flex-direction: column;
+         align-items: center;
+      }
+      &__text-wrapper {
+         text-align: center;
+      }
+      &__icon {
+         margin-right: 0px;
+      }
+   }
+}
+
 .icon-text-list {
    display: flex;
    flex-direction: column;
@@ -26,7 +41,8 @@
       margin-right: 10px;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
    }
    &__underline {
       width: 280px;
