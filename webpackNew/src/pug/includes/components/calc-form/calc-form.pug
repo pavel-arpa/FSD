@@ -4,37 +4,38 @@ include ../dropdown/dropdown.pug
 
 mixin calc-form(arg)
   .calc-form
-    form(method="POST").calc-form__form
-      .calc-form__top
-        h1.calc-form__number= "888"
-        p.calc-form__type-of-number= "ЛЮКС"
-        p.calc-form__price= "9990"
-        span.calc-form__price-per= "в сутки"
+    .calc-form__wrapper
+      form(method="POST").calc-form__form
+        .calc-form__top
+          h1.calc-form__number= "888"
+          p.calc-form__type-of-number= "ЛЮКС"
+          p.calc-form__price= "9990"
+          span.calc-form__price-per= "в сутки"
 
-      .calc-form__main
-        +date-dropdown({type: "double"})
-        +dropdown({type: "people", title: "Гости"})
+        .calc-form__main
+          +date-dropdown({type: "double"})
+          +dropdown({type: "people", title: "Гости"})
 
-      .calc-form__calculating
-        //- Поочередно все элементы, где производятся вычисления
-        .calc-form__string-wrapper
-          p.calc-form__calc-string= "Цена за проживание:"
-          span.calc-form__total= 0
+        .calc-form__calculating
+          //- Поочередно все элементы, где производятся вычисления
+          .calc-form__string-wrapper
+            p.calc-form__calc-string= "Цена за проживание:"
+            span.calc-form__total= 0
 
-        .calc-form__string-wrapper
-          p.calc-form__calc-string= "Сбор за услуги:"
-          span.calc-form__info= "i"
-          span.calc-form__total= 0
+          .calc-form__string-wrapper
+            p.calc-form__calc-string= "Сбор за услуги:"
+            span.calc-form__info= "i"
+            span.calc-form__total= 0
 
-        .calc-form__string-wrapper
-          p.calc-form__calc-string= "Сбор за дополнительные услуги:"
-          span.calc-form__info= "i"
-          span.calc-form__total= 0
+          .calc-form__string-wrapper
+            p.calc-form__calc-string= "Сбор за дополнительные услуги:"
+            span.calc-form__info= "i"
+            span.calc-form__total= 0
 
 
-      .calc-form__sum-wrapper
-        p.calc-form__to-sum= "Итого"
-        .calc-form__points
-        span.calc-form__result= 0
+        .calc-form__sum-wrapper
+          p.calc-form__to-sum= "Итого"
+          .calc-form__points
+          span.calc-form__result= 0
 
-      +button({type: "large", text: "Забронировать"})
+        +button({type: "large", text: "Забронировать"})
