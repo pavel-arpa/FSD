@@ -1,3 +1,12 @@
+@media screen and (max-width: 480px) {
+   .feedback {
+      &__text {
+         font-size: 100%;
+         line-height: 140%;
+      }
+   }
+}
+
 .feedback {
    max-width: 711px;
    display: flex;
@@ -36,5 +45,4 @@
    &__text {
       @extend %font-body;
    }
-
 }
