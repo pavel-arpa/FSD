@@ -124,7 +124,7 @@ module.exports = {
                to: path.resolve(__dirname, 'dist/assets-img')
             },
             {
-               from: path.resolve(__dirname, './src/pug/includes/components/feedback/feedback__image.png'),
+               from: path.resolve(__dirname, './src/pug/includes/components/feedback/accounts'),
                to: path.resolve(__dirname, 'dist/img')
             },
             {
