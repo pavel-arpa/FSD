@@ -1,12 +1,29 @@
 // Медиа запросы
-
+@media screen and (max-width: 1080px) {
+  div.room-page {
+    &__content {
+      flex-direction: column;
+    }
+    &__sector-cont {
+      &_left {
+        width: 100%;
+        order: 1;
+      }
+      &_right {
+        justify-content: center;
+        width: 100%;
+        order: 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
 
 
 // Локальные стили
 .room-page {
   background-color: #fff;
   height: 100%;
-  width: 100vw;
   &__main {
     border-bottom: 1px solid $dh25;
     margin-top: 70px;
@@ -14,7 +31,6 @@
   }
   &__images-wrapper {
     height: 485px;
-    width: 100vw;
     display: flex;
     flex-direction: row;
   }
@@ -49,7 +65,6 @@
   &__content {
     width: 1200px;
     padding: 70px 0px;
-    background-color: #eee;
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -57,12 +72,49 @@
   &__sector-cont {
     display: flex;
     &_left {
+      flex-direction: column;
       width: 66.666%;
       justify-content: flex-start;
+      margin-right: 40px;
     }
     &_right {
       width: 33.333%;
       justify-content: flex-end;
     }
   }
+
+  &__blocks-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    &_non-row {
+      flex-direction: column;
+      & > div:nth-child(n) {
+        margin-bottom: 20px;
+      }
+      & > div:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  &__block {
+    width: 50%;
+  }
+  &__title {
+    @extend %font-h2;
+    margin-bottom: 20px;
+    &_double:after {
+      content: "2 отзыва";
+      @extend %font-body;
+      float: right;
+    }
+  }
+  &__text {
+    @extend %font-body;
+    max-width: 350px;
+  }
+  // &__feedback-count {
+  //   @extend %font-body;
+  //   position: absolute;
+  // }
 }
