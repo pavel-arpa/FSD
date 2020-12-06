@@ -5,10 +5,22 @@
 
 
 mixin bullet-list(arg)
-   .bullet-list
-      h3.bullet-list__title= arg.title
-      - for (let i=0; i<arg.items.length; i++) {
-         .bullet-list__item-wrapper
+   - if (title) {
+      .bullet-list
+         h3.bullet-list__title= arg.title
+         - for (let i=1; i<arg.items.length; i++) {
+            .bullet-list__item-wrapper
+               span.bullet-list__marker
+               span.bullet-list__item= arg.items[i]
+         - }
+   - } else {
+      .bullet-list
+         .bullet-list__item-wrapper.bullet-list__item-wrapper_easy
             span.bullet-list__marker
-            span.bullet-list__item= arg.items[i]
-      - }
+            span.bullet-list__item= arg.items[0]
+         - for (let i=1; i<arg.items.length; i++) {
+            .bullet-list__item-wrapper
+               span.bullet-list__marker
+               span.bullet-list__item= arg.items[i]
+         - }
+   - }
