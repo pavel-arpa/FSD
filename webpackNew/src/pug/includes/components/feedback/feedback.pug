@@ -1,6 +1,7 @@
 //- {
       name:
       likes:
+      clicked: 
       photo:
       activity:
       text:
@@ -10,8 +11,8 @@ include ../like-button/like-button.pug
 mixin feedback(arg)
    .feedback
       .feedback__profile-wrapper
-         img.feedback__photo(src="./img/feedback__image.png", alt="")
-         +like-button({count: arg.likes, clicked: true})
+         img.feedback__photo(src=`./img/${arg.photo}`, alt=arg.name)
+         +like-button({count: arg.likes, clicked: arg.clicked})
       .feedback__text-wrapper
          h4.feedback__name= arg.name
          p.feedback__activity= arg.activity
