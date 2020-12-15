@@ -4,7 +4,7 @@ include ../includes/components/calc-form/calc-form.pug
 include ../includes/components/icon-text-list/icon-text-list.pug
 include ../includes/components/bullet-list/bullet-list.pug
 include ../includes/components/feedback/feedback.pug
-
+include ../includes/components/pie-chart/pie-chart.pug
 
 
 <!DOCTYPE html>
@@ -17,11 +17,24 @@ html(lang="ru")
     +header({hrefs: ["#", "#", "#", "#", "#", "#", "#"], fixed: true})
     main.room-page__main
       .room-page__images-wrapper
+        .room-page__selection
+          .room-page__wrapper-bg-arrow.room-page__wrapper-bg-arrow_left
+            svg(width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg").room-page__arrow
+              <path d="M7.42188 11.0928L6.01563 12.499L0.0156253 6.49902L6.01563 0.499024L7.42188 1.90527L2.82813 6.49902L7.42188 11.0928Z" fill="white"/>
+          .room-page__wrapper-bg-arrow.room-page__wrapper-bg-arrow_right
+            svg(width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg").room-page__arrow
+              <path d="M7.42188 11.0928L6.01563 12.499L0.0156253 6.49902L6.01563 0.499024L7.42188 1.90527L2.82813 6.49902L7.42188 11.0928Z" fill="white"/>
+
         .room-page__sector.room-page__sector-img_first
           img(src="./rooms-images/888-1.png" alt=`Одна из наших спален`).room-page__image.room-page__image_big
         .room-page__sector.room-page__sector-img_second
           img(src="./rooms-images/888-2.png" alt=`Одна из наших спален`).room-page__image.room-page__image_small
           img(src="./rooms-images/888-3.png" alt=`Одна из наших спален`).room-page__image.room-page__image_small
+        .room-page__common-sector
+          img(src="./rooms-images/888-1.png" alt=`Одна из наших спален`).room-page__image.room-page__image_current
+          img(src="./rooms-images/888-2.png" alt=`Одна из наших спален`).room-page__image.room-page__image_sliding
+          img(src="./rooms-images/888-3.png" alt=`Одна из наших спален`).room-page__image.room-page__image_sliding
+
       .room-page__content-wrapper
         .room-page__content
           .room-page__sector-cont.room-page__sector-cont_left
@@ -33,6 +46,7 @@ html(lang="ru")
                 +icon-text-list({logoType: "cosiness", title: "Уют", text: "Номер оснащен камином"})
               .room-page__block
                 h2.room-page__title= "Впечатления от номера"
+                +pie-chart()
 
             .room-page__blocks-wrapper.room-page__blocks-wrapper_non-row
               h2.room-page__title.room-page__title_double= "Отзывы посетителей номера"

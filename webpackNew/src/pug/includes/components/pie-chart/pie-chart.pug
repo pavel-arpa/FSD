@@ -1,0 +1,13 @@
+mixin pie-chart(arg)
+  .pie-chart
+    .pie-chart__pie-fb
+      canvas.pie-chart__canvas(id="pieChart")
+      span.pie-chart__count-fb= 0
+      span.pie-chart__text-fb= "голосов"
+    .pie-chart__components
+      .pie-chart__mark-name.pie-chart__mark-name_yellow= "Великолепно"
+      .pie-chart__mark-name.pie-chart__mark-name_green= "Хорошо"
+      .pie-chart__mark-name.pie-chart__mark-name_purple= "Удовлетворительно"
+      .pie-chart__mark-name.pie-chart__mark-name_black= "Разочарован"
+
+

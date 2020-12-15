@@ -82,6 +82,22 @@
       }
     }
   }
+  div.room-page {
+    &__images-wrapper {
+      height: 300px;
+    }
+    &__sector {
+      display: none;
+    }
+    &__common-sector {
+      display: block;
+      height: 300px;
+      width: 100%;
+    }
+  }
+  div.room-page__selection {
+    display: flex;
+  }
 }
 
 
@@ -96,6 +112,7 @@
     min-height: 100vh;
   }
   &__images-wrapper {
+    position: relative;
     height: 485px;
     display: flex;
     flex-direction: row;
@@ -119,6 +136,54 @@
     &_small {
       height: 50%;
     }
+    &_sliding {
+      display: none;
+      position: absolute;
+    }
+    &_current {
+      display: block;
+    }
+  }
+  &__common-sector {
+    display: none;
+    position: relative;
+    & > img {
+      height: 300px;
+    }
+  }
+  &__selection {
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__wrapper-bg-arrow {
+    width: 44px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    &_left {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      border-radius: 4px 0 0 0;
+    }
+    &_right {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      border-radius: 4px 0 0 0;
+    }
+  }
+  &__arrow {
+    width: 100%;
   }
   
   

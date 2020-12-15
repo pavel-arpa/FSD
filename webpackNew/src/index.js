@@ -42,9 +42,11 @@ import './pug/includes/components/like-button/like-button.js'
 import './pug/includes/components/range-slider/range-slider.js'
 import './pug/includes/components/date-dropdown/date-dropdown.js'
 import './pug/includes/components/header/header.js'
+import './pug/includes/components/pie-chart/pie-chart.js'
 // ---- формы
 import './pug/includes/components/calc-form/calc-form.js'
 import './pug/includes/components/room-card/room-card.js'
 // ---- страницы
 import './pug/pages/filter-page.js'
 import './pug/pages/reg-signin-page.js'
+import './pug/pages/room-page.js'
