@@ -65,7 +65,7 @@ module.exports = {
    },
    output: {
       filename: filename('js'),
-      path: path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, '../dist')
    },
    resolve: {
       extensions: ['.js', 'json', '.png'],
@@ -121,19 +121,19 @@ module.exports = {
          patterns: [
             {
                from: path.resolve(__dirname, 'src/favicon.ico'),
-               to: path.resolve(__dirname, 'dist/assets-img')
+               to: path.resolve(__dirname, '../dist/assets-img')
             },
             {
                from: path.resolve(__dirname, './src/pug/includes/components/feedback/accounts'),
-               to: path.resolve(__dirname, 'dist/img')
+               to: path.resolve(__dirname, '../dist/img')
             },
             {
               from: path.resolve(__dirname, './src/pug/includes/components/room-card/images'),
-              to: path.resolve(__dirname, 'dist/rooms-images')
+              to: path.resolve(__dirname, '../dist/rooms-images')
             },
             {
                from: path.resolve(__dirname, './src/assets/img-for-page-bg'),
-               to: path.resolve(__dirname, 'dist/img-for-page-bg')
+               to: path.resolve(__dirname, '../dist/img-for-page-bg')
             },
          ]
       }),
