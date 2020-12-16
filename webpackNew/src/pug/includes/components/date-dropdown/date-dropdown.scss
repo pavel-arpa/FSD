@@ -17,6 +17,7 @@
    }
    &__label {
       @extend %font-h3;
+      // padding-bottom: 5px;
    }
    &__input {
       @extend %font-body;
@@ -27,8 +28,10 @@
       box-sizing: border-box;
       border-radius: 4px;
       padding: 13px 15px;
+      margin-top: 6px;
       &_single {
          width: 100%;
+         margin-top: 0px;
       }
    }
    &__arrow-double {
