@@ -7,64 +7,68 @@
 
 mixin dropdown(arg)
    .dropdown
-      .dropdown__label-wrapper
-         p.dropdown__label= arg.title
-         if arg.status
-            p.dropdown__label_extra= arg.status
       - if (arg.type == "people") {
-         button(type="button" class="dropdown__btn dropdown__btn_big")
-            span.dropdown__btn-title= "Сколько гостей"
-            <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="dropdown__path" d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill-opacity="0.75"/>
-            </svg>
-         ul.dropdown__content.dropdown__content_big
-            li.dropdown__item
-               span.dropdown__item-title= "Взрослые"
-               .dropdown__item-wrapper
-                  span.dropdown__circle.dropdown__circle_unavailable= "-"
-                  span.dropdown__number-of-people= "0"
-                  span.dropdown__circle= "+"
-            li.dropdown__item
-               span.dropdown__item-title= "Дети"
-               .dropdown__item-wrapper
-                  span.dropdown__circle.dropdown__circle_unavailable= "-"
-                  span.dropdown__number-of-people= "0"
-                  span.dropdown__circle= "+"
-            li.dropdown__item
-               span.dropdown__item-title= "Младенцы"
-               .dropdown__item-wrapper
-                  span.dropdown__circle.dropdown__circle_unavailable= "-"
-                  span.dropdown__number-of-people= "0"
-                  span.dropdown__circle.dropdown__circle_unavailable= "+"
-            li.dropdown__btn-settings
-               button(type="button" class="dropdown__btn-clear")= "очистить"
-               button(type="button").dropdown__btn-submit= "применить"
+            .dropdown__label-wrapper
+               p.dropdown__label= arg.title
+               if arg.status
+                  p.dropdown__label_extra= arg.status
+            button(type="button" class="dropdown__btn dropdown__btn_big")
+               span.dropdown__btn-title= "Сколько гостей"
+               <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path class="dropdown__path" d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill-opacity="0.75"/>
+               </svg>
+            ul.dropdown__content.dropdown__content_big
+               li.dropdown__item
+                  span.dropdown__item-title= "Взрослые"
+                  .dropdown__item-wrapper
+                     span.dropdown__circle.dropdown__circle_unavailable= "-"
+                     span.dropdown__number-of-people= "0"
+                     span.dropdown__circle= "+"
+               li.dropdown__item
+                  span.dropdown__item-title= "Дети"
+                  .dropdown__item-wrapper
+                     span.dropdown__circle.dropdown__circle_unavailable= "-"
+                     span.dropdown__number-of-people= "0"
+                     span.dropdown__circle= "+"
+               li.dropdown__item
+                  span.dropdown__item-title= "Младенцы"
+                  .dropdown__item-wrapper
+                     span.dropdown__circle.dropdown__circle_unavailable= "-"
+                     span.dropdown__number-of-people= "0"
+                     span.dropdown__circle.dropdown__circle_unavailable= "+"
+               li.dropdown__btn-settings
+                  button(type="button" class="dropdown__btn-clear")= "очистить"
+                  button(type="button").dropdown__btn-submit= "применить"
       - }
       - if (arg.type == "accommodation") {
-         button(class="dropdown__btn dropdown__btn_small")
-            span.dropdown__btn-title
-            <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="dropdown__path" d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill-opacity="0.75"/>
-            </svg>
-         ul.dropdown__content.dropdown__content_small
-            li.dropdown__item
-               span.dropdown__item-title= "спальни"
-               .dropdown__item-wrapper
-                  span.dropdown__circle.dropdown__circle_unavailable= "-"
-                  span.dropdown__number-of-items= "0"
-                  span.dropdown__circle= "+"
-            li.dropdown__item
-               span.dropdown__item-title= "кровати"
-               .dropdown__item-wrapper
-                  span.dropdown__circle.dropdown__circle_unavailable= "-"
-                  span.dropdown__number-of-items= "0"
-                  span.dropdown__circle= "+"
-            li.dropdown__item
-               span.dropdown__item-title= "Ванные комнаты"
-               .dropdown__item-wrapper
-                  span.dropdown__circle.dropdown__circle_unavailable= "-"
-                  span.dropdown__number-of-items= "0"
-                  span.dropdown__circle= "+"
+            .dropdown__label-wrapper.dropdown__label-wrapper_small
+               p.dropdown__label= arg.title
+               if arg.status
+                  p.dropdown__label_extra= arg.status
+            button(class="dropdown__btn dropdown__btn_small")
+               span.dropdown__btn-title
+               <svg class="dropdown__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path class="dropdown__path" d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill-opacity="0.75"/>
+               </svg>
+            ul.dropdown__content.dropdown__content_small
+               li.dropdown__item
+                  span.dropdown__item-title= "спальни"
+                  .dropdown__item-wrapper
+                     span.dropdown__circle.dropdown__circle_unavailable= "-"
+                     span.dropdown__number-of-items= "0"
+                     span.dropdown__circle= "+"
+               li.dropdown__item
+                  span.dropdown__item-title= "кровати"
+                  .dropdown__item-wrapper
+                     span.dropdown__circle.dropdown__circle_unavailable= "-"
+                     span.dropdown__number-of-items= "0"
+                     span.dropdown__circle= "+"
+               li.dropdown__item
+                  span.dropdown__item-title= "Ванные комнаты"
+                  .dropdown__item-wrapper
+                     span.dropdown__circle.dropdown__circle_unavailable= "-"
+                     span.dropdown__number-of-items= "0"
+                     span.dropdown__circle= "+"
       - }
       
       
