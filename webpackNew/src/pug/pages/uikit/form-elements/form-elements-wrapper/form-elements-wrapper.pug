@@ -16,57 +16,75 @@ include ../../../../includes/components/feedback/feedback.pug
 include ../../../../includes/components/date-dropdown/date-dropdown.pug
 
 .form-elements-wrapper
-   .form-elements-wrapper__inputs-wrapper
-      +text-field({title: "text field", text: "Email", status: "default"})
-      +text-field({title: "text field", text: "This is pretty awesome", status: "hover / focus", mod: "focused"})
-      +dropdown({title: "dropdown", text: "Сколько гостей", status: "default", type: "people"})
-      +text-field({title: "masked text field", text: "ДД.ММ.ГГГГ", status: "default", mod: "focused", mask: true})
-      +dropdown({title: "dropdown", status: "default", type: "accommodation"})
-      +checkbox-list({type: "expandable", title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], checked: [2, 3, 4], expanded: true})
-      +checkbox-list({type: "buttons", title: "checkbox button", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], checked: [2, 3]})
-      +checkbox-list({type: "rich", title: "rich checkbox button", items: ["Широкий коридор", "Помошник для инвалидов"], subtitles: ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист и проводит до номера."]})
-      +bullet-list({title: "bullet-list", items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
-      +subscription-text-field({title: "subscription text field"})
-      +radio-buttons({title: "radio buttons", items: ["Мужчина", "Женщина"]})
-      +toggle({title: "toggle", items: ["Получать спецпредложения", "Получать спецпредложения"], checked: [1]})
-      .like-button-wrapper
-         .like-button-wrapper__title= "like button"
-         .like-button-wrapper__buttons
-            +like-button({count: 2})
-            +like-button({count: 12, clicked: true})
-      .rate-button-wrapper
-         .rate-button-wrapper__title= "rate button"
-         .rate-button-wrapper__buttons
-            +rate-button({rating: 4})
-            +rate-button({rating: 5})
-      +range-slider({title: "range slider"})
+   //- внутри три секции 1:1:1
+   .form-elements-wrapper__area.form-elements-wrapper__area_upper
+      .form-elements-wrapper__sector 
+         +text-field({title: "text field", text: "Email", status: "default"})
+         +text-field({title: "text field", text: "This is pretty awesome", status: "hover / focus", mod: "focused"})
+         +dropdown({title: "dropdown", text: "Сколько гостей", status: "default", type: "people"})
+         +text-field({title: "masked text field", text: "ДД.ММ.ГГГГ", status: "default", mod: "focused", mask: true})
+         +date-dropdown({type: "double"})
+         +date-dropdown({type: "standart"})
+         +subscription-text-field({title: "subscription text field"})
 
-      .button-wrapper
-         .button-wrapper__title= "buttons"
-         +button({text: "click me", type: "default", input_type: "submit"})
-         +button({text: "Зарегестрироваться", type: "bordered", input_type: "submit"})
-         +button({text: "click me", type: "default", status: "hovering", input_type: "submit"})
-         +button({text: "click me", type: "bordered", input_type: "submit"})
-         +button({text: "click me", type: "bordered", status: "hovering", input_type: "submit"})
-         +button({text: "click me", type: "link", input_type: "submit"})
-         +button({text: "click me", type: "link", status: "hovering", input_type: "submit"})
-         +button({text: "Перейти к оплате", type: "large"})
+      .form-elements-wrapper__sector 
+         +checkbox-list({type: "buttons", title: "checkbox button", items: ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"], checked: [2, 3]})
+         .radio-button-wrapper
+            h3.radio-button-wrapper__title= "radio button"
+            +radio-buttons({title: "radio buttons", items: ["Мужчина", "Женщина"]})
+         +toggle({title: "toggle", items: ["Получать спецпредложения", "Получать спецпредложения"], checked: [1]})
+         .like-button-wrapper
+            h3.like-button-wrapper__title= "like button"
+            .like-button-wrapper__buttons
+               +like-button({count: 2})
+               +like-button({count: 12, clicked: true})
+         .rate-button-wrapper
+            h3.rate-button-wrapper__title= "rate button"
+            .rate-button-wrapper__buttons
+               +rate-button({rating: 4})
+               +rate-button({rating: 5})
 
-      .pagination-wrapper
-         .pagination-wrapper__title= "pagination"
-         +pagination({count: 15})
+      .form-elements-wrapper__sector 
+         +range-slider({title: "range slider"})
+         .button-wrapper
+            .button-wrapper__title= "buttons"
+            .button-wrapper__sector
+               +button({text: "click me", type: "default", input_type: "submit"})
+               +button({text: "click me", type: "default", status: "hovering", input_type: "submit"})
+               +button({text: "click me", type: "bordered", input_type: "submit"})
+               +button({text: "click me", type: "bordered", status: "hovering", input_type: "submit"})
+               +button({text: "click me", type: "link", input_type: "submit"})
+               +button({text: "click me", type: "link", status: "hovering", input_type: "submit"})
+            +button({text: "Перейти к оплате", type: "large"})
+         .pagination-wrapper
+            .pagination-wrapper__title= "pagination"
+            +pagination({count: 15})
 
-      +icon-text-list({logoType: "comfort", title: "Комфорт", text: "Шумопоглощающие стены"})
-      +icon-text-list({logoType: "convenience", title: "Удобство", text: "Окно в каждой из спален"})
-      //- +icon-text-list({logoType: "cosiness", title: "Уют", text: "Номер оснащен камином"})
-      
-      +feedback({name: "Мурад Сарафанов", likes: 12, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", photo: "feedback__image", activity: "5 дней назад"})
+   //- внутри три секции 1:1:1
+   .form-elements-wrapper__area.form-elements-wrapper__area_upper
+      .form-elements-wrapper__sector 
+         +dropdown({title: "dropdown", status: "default", type: "accommodation"})
+      .form-elements-wrapper__sector 
+         +dropdown({title: "dropdown", text: "Сколько гостей", status: "default", type: "people"})
+      .form-elements-wrapper__sector 
+         +dropdown({title: "dropdown", text: "Сколько гостей", status: "default", type: "people"})
 
-      +date-dropdown({type: "standart"})
-      +date-dropdown({type: "double"})
-      //- <div class="datepicker-here"></div>
+   //- внутри три секции 1:1:1
+   .form-elements-wrapper__area.form-elements-wrapper__area_upper
+      .form-elements-wrapper__sector 
+         +checkbox-list({type: "expandable", title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], checked: [2, 3, 4], expanded: false})
+         +checkbox-list({type: "expandable", title: "expandable checkbox list", items: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"], checked: [2, 3, 4], expanded: true})
+      .form-elements-wrapper__sector 
+         +checkbox-list({type: "rich", title: "rich checkbox button", items: ["Широкий коридор", "Помошник для инвалидов"], subtitles: ["Ширина коридоров в номере не менее 91 см.", "На 1 этаже вас встретит специалист и проводит до номера."]})
+      .form-elements-wrapper__sector 
+         +bullet-list({title: "bullet list", items: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
 
 
-
-
-
+   //- Нижняя часть - внутри две секции 1:2
+   .form-elements-wrapper__area.form-elements-wrapper__area_lower
+      .form-elements-wrapper__sector.form-elements-wrapper__sector
+         +icon-text-list({logoType: "comfort", title: "Комфорт", text: "Шумопоглощающие стены"})
+         +icon-text-list({logoType: "convenience", title: "Удобство", text: "Окно в каждой из спален"})
+         //- +icon-text-list({logoType: "cosiness", title: "Уют", text: "Номер оснащен камином"})
+      .form-elements-wrapper__sector.form-elements-wrapper__sector_big
+         +feedback({name: "Мурад Сарафанов", likes: 12, text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", photo: "feedback__image-1.png", activity: "5 дней назад"})

@@ -1,12 +1,52 @@
 
 .form-elements-wrapper {
-   &__inputs-wrapper {
+   background-color: #fff;
    display: flex;
    flex-direction: column;
+   align-items: center;
+   padding-top: 140px;
+   padding-bottom: 140px;
+   &__area {
+      display: flex;
+      flex-wrap: wrap;
+      width: 1200px;
+      &_upper {
+
+      }
+      &_lower {
+
+      }
+   }
+
+   &__sector {
+      display: flex;
+      flex: 33.333%;
+      flex-direction: column;
+      &:nth-child(n) {
+         margin-bottom: 20px;
+      }
+      &_big {
+         flex: 66.666%;
+      }
+   }
+   &__sector > * {
+      margin-bottom: 30px;
+   }
+
+
+   &__inputs-wrapper {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
    padding-top: 50px;
    padding-left: 50px;
    height: 100%;
-   background-color: #fff;
+   }
+}
+.radio-button-wrapper {
+   &__title {
+      @extend %font-h3;
+      margin-bottom: 17px;
    }
 }
 .like-button-wrapper {
@@ -41,8 +81,16 @@
 
 .button-wrapper {
    &__title {
-   @extend %font-h3;
-   margin-bottom: 16px;
+      @extend %font-h3;
+      margin-bottom: 16px;
+   }
+   &__sector {
+      display: grid;
+      grid-template-columns: 30% 30%;
+      grid-template-rows: 1fr 1fr 1fr;
+      & > * {
+         margin-bottom: 30px;
+      }
    }
 }
 
