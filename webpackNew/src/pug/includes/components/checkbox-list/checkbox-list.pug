@@ -16,13 +16,13 @@ mixin checkbox-list(arg)
    .checkbox-list
       - if (arg.type == "expandable") {
          - if (arg.expanded == true) {
-            button(class="checkbox-list__btn checkbox-list__btn_clicked" id="expandableCheckbox")
+            button.checkbox-list__btn.checkbox-list__btn_exp.checkbox-list__btn_clicked
                h3.checkbox-list__title= arg.title
                <svg class="checkbox-list__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M10.5938 0.57812L12 1.98437L6 7.98437L3.49418e-06 1.98437L1.40625 0.578122L6 5.17187L10.5938 0.57812Z" fill="#1F2041" fill-opacity="0.5"/>
                </svg>
          - } else {
-            button.checkbox-list__btn.checkbox-list__btn_default
+            button.checkbox-list__btn.checkbox-list__btn_exp.checkbox-list__btn_default
                h3.checkbox-list__title= arg.title
                <svg class="checkbox-list__arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M10.5938 0.57812L12 1.98437L6 7.98437L3.49418e-06 1.98437L1.40625 0.578122L6 5.17187L10.5938 0.57812Z" fill="#1F2041" fill-opacity="0.5"/>
