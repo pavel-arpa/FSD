@@ -1,5 +1,5 @@
 # Ignore the built
-dist/
+#dist/
 
 # Ignore the node_modules directory
 node_modules/
