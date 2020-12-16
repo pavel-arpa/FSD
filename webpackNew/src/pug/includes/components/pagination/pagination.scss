@@ -39,6 +39,7 @@
    }
    &__annotation {
       @extend %font-body;
+      width: 240px;
       text-align: center;
    }
 }
