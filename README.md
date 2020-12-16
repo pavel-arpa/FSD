@@ -1,3 +1,3 @@
 # FSD
  Toxin
- Ссылка на сайт https://pavel-arpa.github.io/FSD/
+ Ссылка на сайт https://pavel-arpa.github.io/FSD/dist
