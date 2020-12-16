@@ -1,4 +1,4 @@
-if (document.querySelector('.header')) {
+if (document.querySelector('.header__icon-menu')) {
   let iconMenu = document.querySelector('.header__icon-menu')
   let menu = document.querySelector('.header__menu')
   let menuBg = document.querySelector('.header__menu-bg')
