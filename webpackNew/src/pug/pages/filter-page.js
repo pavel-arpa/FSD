@@ -2,7 +2,7 @@ if (document.querySelector('.filter-page__button-aside')) {
   let buttonAside = document.querySelector('.filter-page__button-aside')
   let aside = document.querySelector('.filter-page__aside')
   let asideInner = aside.querySelector('.filter-page__aside-inner')
-  console.log(aside)
+  // console.log(aside)
   let clicks = 0
 
   buttonAside.addEventListener('click', () => {
