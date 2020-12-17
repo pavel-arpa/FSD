@@ -36,7 +36,7 @@ for (let x=0; x<len; x++) {
       
       // Опции календаря
       $('#'+newId).datepicker({
-         todayButton: new Date(),
+         todayButton: true,
          clearButton: true,
          range: true,
          minDate: new Date(),
@@ -48,6 +48,7 @@ for (let x=0; x<len; x++) {
          onSelect: function(formattedDate, date, inst) {
             inputs[0].value = formattedDate.split(' - ')[0]
             savingFormatDate = formattedDate.split(' - ')[0]
+            // console.log(formattedDate.split(' - ')[0])
 
             if (!(formattedDate.split(' - ')[1] == undefined)) {
                inputs[1].value = formattedDate.split(' - ')[1]
@@ -57,8 +58,25 @@ for (let x=0; x<len; x++) {
                inputs[0].value = ''
                inputs[1].value = ''
             }
-         }
+         },
       })
+
+      let content = document.querySelector('.datepicker--content')
+      console.log(content)
+      document.querySelector('.datepicker--buttons').remove()
+      content.insertAdjacentHTML('afterend', '<div class="datepicker--buttons"><span class="datepicker--button">Применить</span><span class="datepicker--button">Очистить</span></div>')
+      let buttons = document.querySelector('.datepicker--buttons')
+      console.log(buttons)
+      buttons.children[0].addEventListener('click', () => {
+         $('#'+newId).datepicker().data('datepicker').hide()
+         inputs[0].value = savingFormatDate
+      })
+      buttons.children[1].addEventListener('click', () => {
+         $('#'+newId).datepicker().data('datepicker').clear()
+      })
+
+
+
 
       
       inputs[1].addEventListener('click', function() {
