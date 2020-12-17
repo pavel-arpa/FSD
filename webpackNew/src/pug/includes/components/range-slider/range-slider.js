@@ -50,7 +50,9 @@ function rangeSlider(id) {
 
       function onMouseUp() {
          document.removeEventListener('mouseup', onMouseUp);
+         document.removeEventListener('touchup', onMouseUp);
          document.removeEventListener('mousemove', onMouseMove);
+         document.removeEventListener('touchmove', onMouseMove);
       }
    }
 
@@ -83,7 +85,9 @@ function rangeSlider(id) {
 
       function onMouseUp() {
          document.removeEventListener('mouseup', onMouseUp);
+         document.removeEventListener('touchup', onMouseUp);
          document.removeEventListener('mousemove', onMouseMove);
+         document.removeEventListener('touchmove', onMouseMove);
       }
    }
 }
